@@ -3776,7 +3776,7 @@ MonoBehaviour:
   target: {fileID: 7029627253670739393}
   targetDirection: {x: 0, y: 0, z: 0}
   MirrorLeft: 1
-  MainCamera: {fileID: 0}
+  MainCamera: {fileID: 3146089798127607419}
   directions: 8
   speed: 10
 --- !u!212 &1153418670
@@ -4611,7 +4611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShowDebugText: 0
   m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
+  m_IgnoreTimeScale: 1
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
@@ -4675,7 +4675,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -4934,7 +4934,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
