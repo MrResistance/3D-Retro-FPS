@@ -3598,6 +3598,7 @@ GameObject:
   - component: {fileID: 293047247}
   - component: {fileID: 293047249}
   - component: {fileID: 293047248}
+  - component: {fileID: 293047250}
   m_Layer: 5
   m_Name: Weapon
   m_TagString: Untagged
@@ -3662,6 +3663,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293047246}
   m_CullTransparentMesh: 1
+--- !u!95 &293047250
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293047246}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd1140ffcbc93454283cc6c082820ef5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &327601492
 GameObject:
   m_ObjectHideFlags: 0
@@ -8087,6 +8107,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4652261428076426922, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
   m_PrefabInstance: {fileID: 4652261428640104468}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1592227519 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4652261428076426923, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
+  m_PrefabInstance: {fileID: 4652261428640104468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1592227520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8112,7 +8137,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 8
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &1592227522
 NavMeshAgent:
@@ -8612,6 +8637,78 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1902475640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1902475641}
+  - component: {fileID: 1902475642}
+  - component: {fileID: 1902475644}
+  - component: {fileID: 1902475643}
+  m_Layer: 0
+  m_Name: ShootingRadius
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1902475641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902475640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1592227519}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1902475642
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902475640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1902475643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902475640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebf8bb02b50a3b4b8653d333dc78140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateMachine: {fileID: 0}
+--- !u!65 &1902475644
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902475640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &2023054515
 GameObject:
   m_ObjectHideFlags: 0
@@ -9367,7 +9464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4652261428076426923, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4652261428076426923, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9776,10 +9873,10 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: InputMove
-        m_Mode: 0
+      - m_Target: {fileID: 7693713947643520892}
+        m_TargetAssemblyTypeName: StarterAssets.FirstPersonController, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9792,9 +9889,9 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7693713947643520892}
         m_TargetAssemblyTypeName: 
-        m_MethodName: InputLook
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9808,10 +9905,10 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta,/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: InputJump
-        m_Mode: 0
+      - m_Target: {fileID: 7693713947643520892}
+        m_TargetAssemblyTypeName: StarterAssets.FirstPersonController, Assembly-CSharp
+        m_MethodName: JumpAndGravity
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9840,8 +9937,8 @@ MonoBehaviour:
     m_ActionName: Player/Sprint[/Keyboard/leftShift,/XInputControllerWindows/leftTrigger]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: e4ce1614-c754-48c1-9103-33130441661f
-    m_ActionName: UI/New action
+    m_ActionId: 37c1a07e-de82-499f-8db4-33be8f7c0c54
+    m_ActionName: Player/Switch Weapon[/Mouse/scroll/y]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -9861,6 +9958,7 @@ GameObject:
   - component: {fileID: 443040831918132619}
   - component: {fileID: 6227298776283118343}
   - component: {fileID: 7693713947643520887}
+  - component: {fileID: 7693713947643520893}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -9897,3 +9995,21 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 2608581610273463840}
   TopClamp: 89
   BottomClamp: -89
+--- !u!114 &7693713947643520893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7693713947643520891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd59719e2b25e2848b2f72db62920d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: 0
+  animator: {fileID: 293047250}
+  pistolAnim: {fileID: 22100000, guid: 5c7971183d818de46b67c43d1601b677, type: 2}
+  shotgunAnim: {fileID: 22100000, guid: 8ac30f92cd5af6c4397d81361f0c47b3, type: 2}
+  minigunAnim: {fileID: 22100000, guid: e866b7106e6e6b74b8f3bb9d533b78a5, type: 2}
+  cannonAnim: {fileID: 22100000, guid: 5d096b39ac941c64ba6fb01432a441a4, type: 2}

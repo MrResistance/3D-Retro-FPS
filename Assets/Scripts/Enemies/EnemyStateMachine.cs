@@ -17,7 +17,7 @@ public class EnemyStateMachine : MonoBehaviour
         playerObj = GameObject.Find("PlayerCapsule").transform;
         State = state.idle;
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         ChaseState();
     }
