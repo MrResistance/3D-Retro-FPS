@@ -3622,7 +3622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &293047248
@@ -10013,4 +10013,9 @@ MonoBehaviour:
   shotgunAnim: {fileID: 22100000, guid: 8ac30f92cd5af6c4397d81361f0c47b3, type: 2}
   minigunAnim: {fileID: 22100000, guid: e866b7106e6e6b74b8f3bb9d533b78a5, type: 2}
   cannonAnim: {fileID: 22100000, guid: 5d096b39ac941c64ba6fb01432a441a4, type: 2}
+  hasKnife: 0
+  hasPistol: 0
+  hasShotgun: 0
+  hasMinigun: 0
+  hasCannon: 0
   fireRate: 0.5
