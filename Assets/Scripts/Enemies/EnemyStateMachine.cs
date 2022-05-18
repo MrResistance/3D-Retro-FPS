@@ -8,12 +8,14 @@ public class EnemyStateMachine : MonoBehaviour
     private NavMeshAgent agent;
     private SphereCollider sc;
     public Transform playerObj;
+    public Animator anim;
     public state State = state.idle;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         sc = GetComponent<SphereCollider>();
+        anim = GetComponentInChildren<Animator>();
         playerObj = GameObject.Find("PlayerCapsule").transform;
         State = state.idle;
     }
@@ -41,6 +43,6 @@ public class EnemyStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        anim.SetFloat("Speed", agent.velocity.magnitude);
     }
 }

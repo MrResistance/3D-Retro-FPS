@@ -57,7 +57,10 @@ public class EnemyAnimation : MonoBehaviour
 
         Vector3 viewDirection = -new Vector3(MainCamera.transform.forward.x, 0, MainCamera.transform.forward.z);
         transform.LookAt(transform.position + viewDirection);
-        anim.SetFloat("ViewAngle", transform.localEulerAngles.y);
+        if (this.gameObject.tag == "Enemy")
+        {
+            anim.SetFloat("ViewAngle", transform.localEulerAngles.y);
+        }
         if (MirrorLeft)
         {
             sr.flipX = !(transform.localEulerAngles.y >= minMirrorAngle && transform.localEulerAngles.y <= maxMirrorAngle);
