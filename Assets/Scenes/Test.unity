@@ -8125,6 +8125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 0}
+  anim: {fileID: 0}
   State: 0
 --- !u!135 &1592227521
 SphereCollider:
