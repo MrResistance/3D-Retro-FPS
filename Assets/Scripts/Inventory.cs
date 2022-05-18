@@ -7,10 +7,12 @@ public class Inventory : MonoBehaviour
     public Weapon currentWeapon;
     public Animator animator;
     public AnimatorOverrideController pistolAnim, shotgunAnim, minigunAnim, cannonAnim;
+    public float fireRate = 0.5F;
+    private float nextFire = 0.0F;
     // Start is called before the first frame update
     void Start()
     {
-        currentWeapon = Weapon.knife;
+        currentWeapon = Weapon.unarmed;
     }
 
     // Update is called once per frame
@@ -44,17 +46,24 @@ public class Inventory : MonoBehaviour
     }
     public void OnShoot()
     {
-        animator.SetTrigger("Attack");
+        if (currentWeapon != Weapon.unarmed)
+        {
+            animator.SetTrigger("Attack");
+        }
     }
     public void OnSwitchWeapon()
     {
-        if ((((int)currentWeapon) + 1) == 6)
+        if (Time.time > nextFire)
         {
-            currentWeapon = 0;
-        }
-        else
-        {
-            currentWeapon++;
+            nextFire = Time.time + fireRate;
+            if ((((int)currentWeapon) + 1) == 6)
+            {
+                currentWeapon = 0;
+            }
+            else
+            {
+                currentWeapon++;
+            }
         }
     }
     public enum Weapon

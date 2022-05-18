@@ -10013,3 +10013,4 @@ MonoBehaviour:
   shotgunAnim: {fileID: 22100000, guid: 8ac30f92cd5af6c4397d81361f0c47b3, type: 2}
   minigunAnim: {fileID: 22100000, guid: e866b7106e6e6b74b8f3bb9d533b78a5, type: 2}
   cannonAnim: {fileID: 22100000, guid: 5d096b39ac941c64ba6fb01432a441a4, type: 2}
+  fireRate: 0.5
