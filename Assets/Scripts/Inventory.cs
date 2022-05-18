@@ -42,6 +42,10 @@ public class Inventory : MonoBehaviour
                 break;       
         }
     }
+    public void OnShoot()
+    {
+        animator.SetTrigger("Attack");
+    }
     public void OnSwitchWeapon()
     {
         if ((((int)currentWeapon) + 1) == 6)
