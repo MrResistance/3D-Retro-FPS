@@ -7,8 +7,8 @@ public class EnemyAttack : MonoBehaviour
     public EnemyStateMachine StateMachine;
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.GetType() == typeof(SphereCollider))
+        Debug.Log("DIKK");
+        if (other.tag == "Player")
         {
             Debug.Log("SHOOT");
             StateMachine.State = EnemyStateMachine.state.shoot;

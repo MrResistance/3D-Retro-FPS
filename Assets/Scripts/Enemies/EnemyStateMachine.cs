@@ -40,9 +40,18 @@ public class EnemyStateMachine : MonoBehaviour
         chase,
         shoot
     }
+    public void Death()
+    {
+        anim.SetTrigger("Death");
+    }
     // Update is called once per frame
     void Update()
     {
         anim.SetFloat("Speed", agent.velocity.magnitude);
+        if (State == state.shoot)
+        {
+            agent.isStopped = true;
+            anim.SetTrigger("Shoot");
+        }
     }
 }
