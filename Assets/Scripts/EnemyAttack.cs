@@ -7,10 +7,8 @@ public class EnemyAttack : MonoBehaviour
     public EnemyStateMachine StateMachine;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("DIKK");
         if (other.tag == "Player")
         {
-            Debug.Log("SHOOT");
             StateMachine.State = EnemyStateMachine.state.shoot;
         }
     }
@@ -21,11 +19,5 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         StateMachine = GetComponentInParent<EnemyStateMachine>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
