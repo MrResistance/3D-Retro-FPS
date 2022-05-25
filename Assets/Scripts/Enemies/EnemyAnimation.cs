@@ -10,6 +10,7 @@ public class EnemyAnimation : MonoBehaviour
     public bool MirrorLeft = true;
     private Animator anim;
     private SpriteRenderer sr;
+    public EnemyAttack enemyAttack;
     public Camera MainCamera;
     public int directions = 8;
     float minMirrorAngle = 0;
@@ -48,5 +49,9 @@ public class EnemyAnimation : MonoBehaviour
         {
             sr.flipX = !(transform.localEulerAngles.y >= minMirrorAngle && transform.localEulerAngles.y <= maxMirrorAngle);
         }
+    }
+    public void Shoot()
+    {
+        enemyAttack.Shoot();
     }
 }

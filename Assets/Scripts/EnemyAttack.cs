@@ -8,15 +8,21 @@ public class EnemyAttack : MonoBehaviour
     public objectPooler objPool;
     [SerializeField]
     private GameObject proj;
+    //private Animator animator;
+    //public AnimationEvent shootProj;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             StateMachine.State = EnemyStateMachine.state.shoot;
-            objPool.GetObjectFromPool(proj);
-            proj.SetActive(true);
-            proj.transform.position = this.transform.position + new Vector3(0, 1, 1);
+            Shoot();
         }
+    }
+    public void Shoot()
+    {
+        objPool.GetObjectFromPool(proj);
+        proj.SetActive(true);
+        proj.transform.position = this.transform.position + new Vector3(0, 1, 1);
     }
     private void OnTriggerExit(Collider other)
     {
