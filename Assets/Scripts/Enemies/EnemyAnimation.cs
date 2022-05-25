@@ -38,23 +38,6 @@ public class EnemyAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //// Determine which direction to rotate towards
-        //targetDirection = target.position - transform.position;
-        //targetDirection.y = 0;
-        //// The step size is equal to speed times frame time.
-        //float singleStep = speed * Time.deltaTime;
-
-        //// Rotate the forward vector towards the target direction by one step
-        //Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
-
-        //// Draw a ray pointing at our target in
-        //Debug.DrawRay(transform.position, newDirection, Color.red);
-
-        //// Calculate a rotation a step closer to the target and applies rotation to this object
-        //transform.rotation = Quaternion.LookRotation(newDirection);
-        //anim.SetFloat("PlayerX", targetDirection.x);
-        //anim.SetFloat("PlayerZ", -targetDirection.z);
-
         Vector3 viewDirection = -new Vector3(MainCamera.transform.forward.x, 0, MainCamera.transform.forward.z);
         transform.LookAt(transform.position + viewDirection);
         if (this.gameObject.tag == "Enemy")
