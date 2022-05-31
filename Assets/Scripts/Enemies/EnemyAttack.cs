@@ -5,9 +5,11 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     public EnemyStateMachine StateMachine;
-    public objectPooler objPool;
+    public ObjectPooler objPool;
     [SerializeField]
-    private GameObject proj;
+    //private GameObject proj;
+    private Transform firePos;
+
     //private Animator animator;
     //public AnimationEvent shootProj;
     private void OnTriggerEnter(Collider other)
@@ -20,9 +22,10 @@ public class EnemyAttack : MonoBehaviour
     }
     public void Shoot()
     {
-        objPool.GetObjectFromPool(proj);
-        proj.SetActive(true);
-        proj.transform.position = this.transform.position + new Vector3(0, 1, 1);
+        objPool.SpawnFromPool("Projectile", firePos.position, firePos.rotation);
+        Debug.Log("FirePos: " + firePos.position);
+        //proj.SetActive(true);
+        //proj.transform.position = this.transform.position + new Vector3(0, 1, 1);
     }
     private void OnTriggerExit(Collider other)
     {
@@ -31,6 +34,7 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         StateMachine = GetComponentInParent<EnemyStateMachine>();
-        objPool = GameObject.FindObjectOfType<objectPooler>();
+        objPool = GameObject.FindObjectOfType<ObjectPooler>();
+        firePos = GetComponentInParent<Transform>().parent.GetChild(3);
     }
 }

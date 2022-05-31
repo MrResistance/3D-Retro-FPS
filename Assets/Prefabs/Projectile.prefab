@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 91452231}
   - component: {fileID: 91452233}
   - component: {fileID: 91452234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -129,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   rb: {fileID: 0}
+  objPooler: {fileID: 0}
   speed: 20
 --- !u!114 &91452234
 MonoBehaviour:
@@ -145,6 +147,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetDirection: {x: 0, y: 0, z: 0}
   MirrorLeft: 1
+  enemyAttack: {fileID: 0}
   MainCamera: {fileID: 0}
   directions: 8
   speed: 1
