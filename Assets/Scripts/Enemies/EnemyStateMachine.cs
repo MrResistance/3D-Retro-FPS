@@ -21,12 +21,22 @@ public class EnemyStateMachine : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        ChaseState();
+        if (other.tag == "Player")
+        {
+            ChaseState();
+        }
     }
-
     private void OnTriggerExit(Collider other)
     {
+        if (other.tag == "Player")
+        {
+            ChaseState();
+        }
+    }
+    public void IdleState()
+    {
         State = state.idle;
+        agent.isStopped = true;
     }
     public void ChaseState()
     {
@@ -43,6 +53,7 @@ public class EnemyStateMachine : MonoBehaviour
     public void Death()
     {
         anim.SetTrigger("Death");
+        agent.isStopped = true;
     }
     // Update is called once per frame
     void Update()
@@ -50,6 +61,7 @@ public class EnemyStateMachine : MonoBehaviour
         anim.SetFloat("Speed", agent.velocity.magnitude);
         if (State == state.shoot)
         {
+            Debug.Log("SHOOT");
             agent.isStopped = true;
             anim.SetTrigger("Shoot");
         }

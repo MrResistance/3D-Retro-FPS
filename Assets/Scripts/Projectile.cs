@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     public Transform target;
     public Rigidbody rb;
     public ObjectPooler objPooler;
-    public float speed = 5f;
+    public float speed = 20f;
     private Vector3 firePos;
 
     private void OnEnable()
@@ -33,8 +33,15 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((this.gameObject.tag.Contains("player") && other.tag.Contains("Enemy") || this.gameObject.tag.Contains("enemy") && other.tag.Contains("player")) && other.tag != "Projectile")
+        if ((this.gameObject.tag.Contains("Player") && other.tag.Contains("Enemy") || this.gameObject.tag.Contains("Enemy") && other.tag.Contains("Player")) && other.tag != "Projectile")
         {
+            //Do damage
+            //Debug.Log("DO DAMAGE");
+            this.gameObject.SetActive(false);
+        }
+        else
+        {
+            //Debug.Log("I HIT: " + other.name);
             this.gameObject.SetActive(false);
         }
     }

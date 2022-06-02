@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1902475642}
   - component: {fileID: 1902475644}
   - component: {fileID: 1902475643}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShootingRadius
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StateMachine: {fileID: 0}
   objPool: {fileID: 0}
+  firePos: {fileID: 0}
 --- !u!1 &4652261427642860989
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +87,7 @@ GameObject:
   - component: {fileID: 4652261427642860985}
   - component: {fileID: 4652261427642860984}
   - component: {fileID: 4652261427642860991}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemies-sheet_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -103,7 +104,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4044691819870778925}
   m_Father: {fileID: 4652261428076426923}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -241,7 +243,7 @@ GameObject:
   - component: {fileID: 1592227521}
   - component: {fileID: 1592227520}
   - component: {fileID: 1592227522}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -262,7 +264,6 @@ Transform:
   - {fileID: 4652261427642860990}
   - {fileID: 4652261428788302773}
   - {fileID: 1902475641}
-  - {fileID: 4044691819870778925}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -325,7 +326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4652261428788302773}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyFront
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -355,7 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4044691819870778925}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,9 +371,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8376098530400110590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.75}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
-  m_Father: {fileID: 4652261428076426923}
-  m_RootOrder: 3
+  m_Father: {fileID: 4652261427642860990}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

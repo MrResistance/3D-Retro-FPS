@@ -22,8 +22,7 @@ public class EnemyAttack : MonoBehaviour
     }
     public void Shoot()
     {
-        objPool.SpawnFromPool("Projectile", firePos.position, firePos.rotation);
-        Debug.Log("FirePos: " + firePos.position);
+        objPool.SpawnFromPool("Enemy Projectile", firePos.position, firePos.rotation);
         //proj.SetActive(true);
         //proj.transform.position = this.transform.position + new Vector3(0, 1, 1);
     }
@@ -35,6 +34,6 @@ public class EnemyAttack : MonoBehaviour
     {
         StateMachine = GetComponentInParent<EnemyStateMachine>();
         objPool = GameObject.FindObjectOfType<ObjectPooler>();
-        firePos = GetComponentInParent<Transform>().parent.GetChild(3);
+        firePos = GetComponentInParent<Transform>().parent.GetChild(0).GetChild(0);
     }
 }

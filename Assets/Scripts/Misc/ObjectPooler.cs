@@ -52,7 +52,7 @@ public class ObjectPooler : MonoBehaviour
         objectToSpawn.SetActive(true);
         switch (tag)
         {
-            case "Projectile":
+            case "Enemy Projectile":
                 objectToSpawn.GetComponent<Projectile>();
                 break;
             //case "Teleporter":
