@@ -12,8 +12,12 @@ public class Projectile : MonoBehaviour
 
     private void OnEnable()
     {
-        firePos = new Vector3(target.position.x, 1, target.position.z);
-        rb.AddForce((firePos - new Vector3 (transform.position.x, 1, transform.position.z)) * Time.deltaTime * speed, ForceMode.Impulse);
+        //firePos = new Vector3(target.position.x, 1, target.position.z);
+        //rb.AddForce((firePos - new Vector3 (transform.position.x, 1, transform.position.z)) * Time.deltaTime * speed, ForceMode.Impulse);
+        
+        //rb.AddForce((firePos - new Vector3(transform.position.x, 1, transform.position.z)), ForceMode.Impulse);
+        
+        //rb.AddForce(transform.forward * speed, ForceMode.Impulse);
 
     }
     // Start is called before the first frame update
@@ -33,7 +37,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((this.gameObject.tag.Contains("Player") && other.tag.Contains("Enemy") || this.gameObject.tag.Contains("Enemy") && other.tag.Contains("Player")) && other.tag != "Projectile")
+        if ((this.gameObject.tag.Contains("Player") && other.tag.Contains("Enemy") || this.gameObject.tag.Contains("Enemy") && other.tag.Contains("Player")))
         {
             //Do damage
             //Debug.Log("DO DAMAGE");

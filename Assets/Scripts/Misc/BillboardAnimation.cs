@@ -22,6 +22,7 @@ public class BillboardAnimation : MonoBehaviour
         {
             MainCamera = Camera.main;
         }
+        target = GameObject.Find("PlayerCapsule").transform;
     }
     void Start()
     {
@@ -50,5 +51,8 @@ public class BillboardAnimation : MonoBehaviour
         }
     }
 
-
+    public void EnemyShoot()
+    {
+        GetComponentInParent<EnemyAI>().FireProjectile();
+    }
 }

@@ -175,11 +175,12 @@ MonoBehaviour:
   walkPointRange: 5
   timeBetweenAttacks: 0.5
   projectile: {fileID: 1260083137541151160, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
-  projectileSpeed: 15
+  projectileSpeed: 20
   sightRange: 10
   attackRange: 5
   playerInSightRange: 0
   playerInAttackRange: 0
+  anim: {fileID: 0}
 --- !u!1 &164445368
 GameObject:
   m_ObjectHideFlags: 0
@@ -9501,6 +9502,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655669791295714490, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
       propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655669791295714490, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655669791295714490, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655669792507543744, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655669792507543744, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
+      propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4655669792507543746, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}

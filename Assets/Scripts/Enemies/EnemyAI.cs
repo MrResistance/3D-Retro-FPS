@@ -27,10 +27,20 @@ public class EnemyAI : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    //Animation
+    public Animator anim;
+    public BillboardAnimation billboardAnimation;
+
+    public ObjectPooler objPooler;
+
     private void Awake()
     {
         player = GameObject.Find("PlayerCapsule").transform;
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponentInChildren<Animator>();
+        anim.SetFloat("attackSpeed", timeBetweenAttacks);
+        billboardAnimation = GetComponentInChildren<BillboardAnimation>();
+        objPooler = GameObject.FindObjectOfType<ObjectPooler>();
     }
 
     private void Update()
@@ -42,6 +52,7 @@ public class EnemyAI : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        anim.SetFloat("Speed", agent.velocity.magnitude);
     }
 
     private void Patroling()
@@ -83,15 +94,22 @@ public class EnemyAI : MonoBehaviour
 
         if (!alreadyAttacked)
         {
+            anim.SetTrigger("Shoot");
             ///Attack code here
-            Rigidbody rb = Instantiate(projectile, new Vector3 (transform.position.x, 1, transform.position.z), Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            
             //rb.AddForce(transform.up * 8f, ForceMode.Impulse);
             ///End of attack code
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+    }
+
+    public void FireProjectile()
+    {
+        objPooler.SpawnFromPool("Enemy Projectile", new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity);
+        //Rigidbody rb = Instantiate(projectile, new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity).GetComponent<Rigidbody>();
+        //rb.AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
     }
     private void ResetAttack()
     {
@@ -102,7 +120,11 @@ public class EnemyAI : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        if (health <= 0)
+        {
+            anim.Play("Death");
+            Invoke(nameof(DestroyEnemy), 0.5f);
+        }
     }
     private void DestroyEnemy()
     {
