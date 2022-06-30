@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
 
     private void OnEnable()
     {
-        //firePos = new Vector3(target.position.x, 1, target.position.z);
+        firePos = new Vector3(target.position.x, 1, target.position.z);
         //rb.AddForce((firePos - new Vector3 (transform.position.x, 1, transform.position.z)) * Time.deltaTime * speed, ForceMode.Impulse);
         
         //rb.AddForce((firePos - new Vector3(transform.position.x, 1, transform.position.z)), ForceMode.Impulse);
@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = Vector3.MoveTowards(new Vector3(transform.position.x, 1, transform.position.z), firePos, speed);
+        transform.position = Vector3.MoveTowards(new Vector3(transform.position.x, 1, transform.position.z), firePos, speed);
         //transform.Translate(target.position * Time.deltaTime * speed);
     }
 
@@ -40,12 +40,12 @@ public class Projectile : MonoBehaviour
         if ((this.gameObject.tag.Contains("Player") && other.tag.Contains("Enemy") || this.gameObject.tag.Contains("Enemy") && other.tag.Contains("Player")))
         {
             //Do damage
-            //Debug.Log("DO DAMAGE");
+            Debug.Log("DO DAMAGE");
             DisableProjectile();
         }
         else
         {
-            //Debug.Log("I HIT: " + other.name);
+            Debug.Log("I HIT: " + other.name);
             DisableProjectile();
         }
     }

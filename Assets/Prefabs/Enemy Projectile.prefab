@@ -149,4 +149,4 @@ MonoBehaviour:
   target: {fileID: 0}
   rb: {fileID: 0}
   objPooler: {fileID: 0}
-  speed: 20
+  speed: 1
