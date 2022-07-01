@@ -29,7 +29,7 @@ public class EnemyAI : MonoBehaviour
 
     //Animation
     public Animator anim;
-    public BillboardAnimation billboardAnimation;
+    public MobBillboardAnimation mobBillboardAnimation;
 
     public ObjectPooler objPooler;
 
@@ -39,7 +39,7 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
         anim.SetFloat("attackSpeed", timeBetweenAttacks);
-        billboardAnimation = GetComponentInChildren<BillboardAnimation>();
+        mobBillboardAnimation = GetComponentInChildren<MobBillboardAnimation>();
         objPooler = GameObject.FindObjectOfType<ObjectPooler>();
     }
 
@@ -90,7 +90,7 @@ public class EnemyAI : MonoBehaviour
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+        //transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
