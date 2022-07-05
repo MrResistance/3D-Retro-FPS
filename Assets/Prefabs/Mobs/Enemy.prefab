@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 92446202}
   - component: {fileID: 92446200}
   - component: {fileID: 92446201}
+  - component: {fileID: 4459813186082950081}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -90,7 +91,6 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 1024
-  health: 10
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   timeBetweenAttacks: 0.5
@@ -103,6 +103,19 @@ MonoBehaviour:
   anim: {fileID: 4655669792507543772}
   mobBillboardAnimation: {fileID: 4655669792507543746}
   objPooler: {fileID: 0}
+--- !u!114 &4459813186082950081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655669791295714490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9083f530f9434e349a66165289a8e619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
 --- !u!1 &4655669792507543744
 GameObject:
   m_ObjectHideFlags: 0

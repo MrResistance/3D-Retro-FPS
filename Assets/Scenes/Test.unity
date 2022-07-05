@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 91b687c725087b245908f3f40bd1334b, type: 2}
+--- !u!1 &63539130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 63539131}
+  m_Layer: 0
+  m_Name: Player Projectiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &63539131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63539130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 228582803}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164445368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,7 +3647,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1426023784}
+  - {fileID: 63539131}
   m_Father: {fileID: 449859942}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3656,8 +3688,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: 0, y: -300}
+  m_SizeDelta: {x: 960, y: 540}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &293047248
 MonoBehaviour:
@@ -7190,7 +7222,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26322
+  m_Name: pb_Mesh26318
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7381,7 +7413,11 @@ MonoBehaviour:
   - tag: Enemy Projectile
     prefab: {fileID: 2406943198113280055, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
     size: 50
-    parent: {fileID: 228582803}
+    parent: {fileID: 1426023784}
+  - tag: Player Projectile
+    prefab: {fileID: 3709489187042908511, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+    size: 50
+    parent: {fileID: 63539131}
 --- !u!4 &449859942
 Transform:
   m_ObjectHideFlags: 0
@@ -7403,7 +7439,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26288
+  m_Name: pb_Mesh26280
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7632,7 +7668,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26384
+  m_Name: pb_Mesh26376
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7932,7 +7968,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26338
+  m_Name: pb_Mesh26330
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8090,13 +8126,43 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1426023783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426023784}
+  m_Layer: 0
+  m_Name: Enemy Projectiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426023784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426023783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 228582803}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1581378007
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26404
+  m_Name: pb_Mesh26396
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9473,11 +9539,11 @@ PrefabInstance:
       objectReference: {fileID: 449859941}
     - target: {fileID: 92446201, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
       propertyPath: sightRange
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 92446201, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
       propertyPath: attackRange
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4655669791295714485, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
       propertyPath: m_RootOrder
@@ -9822,6 +9888,7 @@ GameObject:
   - component: {fileID: 6307716567156798305}
   - component: {fileID: 6307716567156798304}
   - component: {fileID: 6307716567156798319}
+  - component: {fileID: 6307716567156798320}
   m_Layer: 10
   m_Name: Capsule
   m_TagString: Player
@@ -9857,6 +9924,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6307716567156798320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307716567156798317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9083f530f9434e349a66165289a8e619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!4 &7029627253670739393
 Transform:
   m_ObjectHideFlags: 0
@@ -10004,6 +10084,7 @@ GameObject:
   - component: {fileID: 6227298776283118343}
   - component: {fileID: 7693713947643520887}
   - component: {fileID: 7693713947643520893}
+  - component: {fileID: 7693713947643520894}
   m_Layer: 10
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -10059,8 +10140,20 @@ MonoBehaviour:
   minigunAnim: {fileID: 22100000, guid: e866b7106e6e6b74b8f3bb9d533b78a5, type: 2}
   cannonAnim: {fileID: 22100000, guid: 5d096b39ac941c64ba6fb01432a441a4, type: 2}
   hasKnife: 0
-  hasPistol: 0
+  hasPistol: 1
   hasShotgun: 0
   hasMinigun: 0
   hasCannon: 0
   fireRate: 0.5
+--- !u!114 &7693713947643520894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7693713947643520891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55ac7cf5b24fae4dbcce48b9112256c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

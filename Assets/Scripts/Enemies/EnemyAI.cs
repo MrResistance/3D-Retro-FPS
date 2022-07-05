@@ -10,8 +10,6 @@ public class EnemyAI : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsPlayer;
 
-    public float health;
-
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -33,10 +31,11 @@ public class EnemyAI : MonoBehaviour
 
     public ObjectPooler objPooler;
 
-    public float thisY;
+    private Health health;
 
     private void Awake()
     {
+        health = GetComponent<Health>();
         player = GameObject.Find("PlayerCapsule").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
@@ -117,21 +116,6 @@ public class EnemyAI : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            anim.Play("Death");
-            Invoke(nameof(DestroyEnemy), 0.5f);
-        }
-    }
-    private void DestroyEnemy()
-    {
-        gameObject.SetActive(false);
     }
 
     private void OnDrawGizmosSelected()

@@ -10,7 +10,12 @@ public class Inventory : MonoBehaviour
     public bool hasKnife = false, hasPistol = false, hasShotgun = false, hasMinigun = false, hasCannon = false;
     public float fireRate = 0.5F;
     private float nextFire = 0.0F;
+    private PlayerAttack playerAttack;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        playerAttack = GetComponent<PlayerAttack>();
+    }
     void Start()
     {
         currentWeapon = Weapon.unarmed;
@@ -55,6 +60,7 @@ public class Inventory : MonoBehaviour
         if (currentWeapon != Weapon.unarmed)
         {
             animator.SetTrigger("Attack");
+            playerAttack.ShootProjectile();
         }
     }
     public void OnSwitchWeapon()

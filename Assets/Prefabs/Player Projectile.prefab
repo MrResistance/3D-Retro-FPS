@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1326393361679164555, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
+      propertyPath: speed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326393361679164555, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2406943198113280055, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
       propertyPath: m_Name
       value: Player Projectile
@@ -34,6 +42,14 @@ PrefabInstance:
     - target: {fileID: 2629844016022916222, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
       propertyPath: m_Color.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061004303147065436, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881730117556932900, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
+      propertyPath: damage
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8252770600980278959, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
       propertyPath: m_RootOrder
