@@ -50,10 +50,13 @@ public class ObjectPooler : MonoBehaviour
 
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
         objectToSpawn.SetActive(true);
+        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.rotation = rotation;
         switch (tag)
         {
             case "Enemy Projectile":
                 objectToSpawn.GetComponent<Projectile>();
+                //objectToSpawn.transform.rotation = new Quaternion(0,180,0,0);
                 break;
             //case "Teleporter":
             //    objectToSpawn.GetComponent<Teleporter>().TeleporterStart();
@@ -76,8 +79,7 @@ public class ObjectPooler : MonoBehaviour
             //    objectToSpawn.GetComponent<Pickup>().FindPlayer();
             //    break;
         }
-        objectToSpawn.transform.position = position;
-        objectToSpawn.transform.rotation = rotation;
+        
         poolDictionary[tag].Enqueue(objectToSpawn);
         return objectToSpawn;
     }

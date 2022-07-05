@@ -123,80 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 91b687c725087b245908f3f40bd1334b, type: 2}
---- !u!1 &92446199 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4655669791295714490, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
-  m_PrefabInstance: {fileID: 4655669791203273037}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &92446200
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92446199}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &92446201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92446199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc8193173e74f024eb1530d49a3c1908, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 92446200}
-  player: {fileID: 7029627253670739393}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 1
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  health: 10
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
-  timeBetweenAttacks: 0.5
-  projectile: {fileID: 1260083137541151160, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
-  projectileSpeed: 1
-  sightRange: 10
-  attackRange: 5
-  playerInSightRange: 0
-  playerInAttackRange: 0
-  anim: {fileID: 0}
-  mobBillboardAnimation: {fileID: 0}
-  objPooler: {fileID: 449859941}
---- !u!136 &92446202
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92446199}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &164445368
 GameObject:
   m_ObjectHideFlags: 0
@@ -7453,7 +7379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: Enemy Projectile
-    prefab: {fileID: 1260083137541151160, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
+    prefab: {fileID: 2406943198113280055, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
     size: 50
     parent: {fileID: 228582803}
 --- !u!4 &449859942
@@ -7477,7 +7403,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26284
+  m_Name: pb_Mesh26288
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7646,6 +7572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 5088541549266517867, guid: 630b231adc5190542be413249cb601c1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5088541549266517871, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -7702,7 +7632,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26390
+  m_Name: pb_Mesh26384
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8002,7 +7932,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26334
+  m_Name: pb_Mesh26338
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8166,7 +8096,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26410
+  m_Name: pb_Mesh26404
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8330,7 +8260,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26296
+  m_Name: pb_Mesh26300
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9502,7 +9432,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079265533070742147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.210217, y: -8.786317, z: 23.948788}
+  m_LocalPosition: {x: 26.81, y: -8.786317, z: 23.948788}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3146089798127607420}
@@ -9533,6 +9463,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 92446201, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7029627253670739393}
+    - target: {fileID: 92446201, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
+      propertyPath: objPooler
+      value: 
+      objectReference: {fileID: 449859941}
     - target: {fileID: 4655669791295714485, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -9579,22 +9517,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655669791295714490, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
       propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4655669791295714490, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4655669791295714490, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4655669792507543744, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4655669792507543744, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
-      propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4655669792507543746, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}

@@ -107,7 +107,7 @@ public class EnemyAI : MonoBehaviour
 
     public void FireProjectile()
     {
-        objPooler.SpawnFromPool("Enemy Projectile", new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity);
+        objPooler.SpawnFromPool("Enemy Projectile", new Vector3(transform.position.x, 1, transform.position.z), new Quaternion(0,transform.rotation.y,0,0));
         //Rigidbody rb = Instantiate(projectile, new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity).GetComponent<Rigidbody>();
         //rb.AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
     }
