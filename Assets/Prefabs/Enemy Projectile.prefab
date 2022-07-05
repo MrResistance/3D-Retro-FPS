@@ -176,8 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  tempTarget: {fileID: 0}
   rb: {fileID: 9193854157301619832}
   objPooler: {fileID: 0}
   MainCamera: {fileID: 0}
-  speed: 20
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  speed: 2

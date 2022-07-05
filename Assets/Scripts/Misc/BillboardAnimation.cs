@@ -24,6 +24,6 @@ public class BillboardAnimation : MonoBehaviour
         direction = target.position - transform.position;
         direction.y = 0;
         rotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+        gameObject.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
     }
 }

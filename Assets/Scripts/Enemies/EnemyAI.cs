@@ -33,6 +33,8 @@ public class EnemyAI : MonoBehaviour
 
     public ObjectPooler objPooler;
 
+    public float thisY;
+
     private void Awake()
     {
         player = GameObject.Find("PlayerCapsule").transform;
@@ -107,7 +109,8 @@ public class EnemyAI : MonoBehaviour
 
     public void FireProjectile()
     {
-        objPooler.SpawnFromPool("Enemy Projectile", new Vector3(transform.position.x, 1, transform.position.z), new Quaternion(0,transform.rotation.y,0,0));
+        //thisY = transform.localToWorldMatrix;
+        objPooler.SpawnFromPool("Enemy Projectile", new Vector3(transform.position.x, 1, transform.position.z), new Quaternion(0,45,0,0));
         //Rigidbody rb = Instantiate(projectile, new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity).GetComponent<Rigidbody>();
         //rb.AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
     }
@@ -128,7 +131,7 @@ public class EnemyAI : MonoBehaviour
     }
     private void DestroyEnemy()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void OnDrawGizmosSelected()

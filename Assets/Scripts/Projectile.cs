@@ -5,47 +5,47 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public Transform target;
+    public Transform target, tempTarget;
     public Rigidbody rb;
     public ObjectPooler objPooler;
     public Camera MainCamera;
     public float speed = 1f;
-    private Vector3 targetPos, thisPos, direction;
-    public Quaternion rotation;
-
-    private void OnEnable()
-    {
-    }
-    private void Start()
-    {
-        
-    }
     private void FixedUpdate()
     {
-        rb.velocity = transform.forward * speed;
+        if (this.gameObject.tag.Contains("Enemy"))
+        {
+            rb.velocity = -(new Vector3 (transform.position.x, 1, transform.position.z) - new Vector3 (tempTarget.transform.position.x, 1, tempTarget.transform.position.z)) * speed;
+        }
+        else
+        {
+            rb.velocity = transform.forward * speed;
+        }
+    }
+    private void OnEnable()
+    {
+        tempTarget = target.transform;
     }
     // Start is called before the first frame update
     void Awake()
     {
         MainCamera = Camera.main;
         objPooler = GameObject.FindObjectOfType<ObjectPooler>();
-        target = GameObject.Find("PlayerCapsule").transform;
+        if (this.gameObject.tag.Contains("Enemy"))
+        {
+            target = GameObject.Find("PlayerCapsule").transform;
+        }
+        else
+        {
+            target = null;
+        }
         rb = GetComponentInChildren<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if ((this.gameObject.tag.Contains("Player") && other.tag.Contains("Enemy") || this.gameObject.tag.Contains("Enemy") && other.tag.Contains("Player")))
         {
             //Do damage
             Debug.Log("DO DAMAGE");
-            //DisableProjectile();
         }
             Debug.Log("I HIT: " + other.name);
             DisableProjectile();
