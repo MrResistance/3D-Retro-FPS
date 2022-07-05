@@ -49,38 +49,15 @@ public class ObjectPooler : MonoBehaviour
         }
 
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
-        Debug.Log("first: " + objectToSpawn.transform.rotation);
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
         switch (tag)
         {
             case "Enemy Projectile":
-                //objectToSpawn.GetComponent<Projectile>().rotation = rotation;
+                //Do code
                 break;
-            //case "Teleporter":
-            //    objectToSpawn.GetComponent<Teleporter>().TeleporterStart();
-            //    break;
-            //case "Score Pickup Text":
-            //    objectToSpawn.GetComponent<Fade>().DeactivateDelayed();
-            //    break;
-            //case "Pickup":
-            //    objectToSpawn.GetComponent<Pickup>().fadeAway();
-            //    objectToSpawn.GetComponent<Pickup>().FindPlayer();
-            //    break;
-            //case "Super Pickup Text":
-            //    objectToSpawn.GetComponent<Fade>().DeactivateDelayed();
-            //    break;
-            //case "Implosion":
-            //    objectToSpawn.GetComponent<Fade>().DeactivateDelayed();
-            //    break;
-            //case "Super Pickup":
-            //    objectToSpawn.GetComponent<Pickup>().fadeAway();
-            //    objectToSpawn.GetComponent<Pickup>().FindPlayer();
-            //    break;
         }
-       
-        Debug.Log("2nd: " + objectToSpawn.transform.rotation);
         poolDictionary[tag].Enqueue(objectToSpawn);
         return objectToSpawn;
     }
