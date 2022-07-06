@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     private Inventory inv;
     private ObjectPooler objPooler;
+    public Transform firePos;
 
     private void Awake()
     {
@@ -16,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (inv.currentWeapon == Inventory.Weapon.pistol)
         {
-            objPooler.SpawnFromPool("Player Projectile", new Vector3(transform.position.x + 1f, 1, transform.position.z), Quaternion.identity);
+            objPooler.SpawnFromPool("Player Projectile", firePos.transform.position, Quaternion.identity);
         }
     }
 }

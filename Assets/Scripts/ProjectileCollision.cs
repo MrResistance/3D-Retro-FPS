@@ -6,6 +6,7 @@ public class ProjectileCollision : MonoBehaviour
 {
     public ProjectileMovement pm;
     public float damage = 5f;
+    private Health health;
     private void Awake()
     {
         pm = GetComponentInParent<ProjectileMovement>();
@@ -15,7 +16,11 @@ public class ProjectileCollision : MonoBehaviour
         if (collision.collider.tag.Contains("Enemy") || collision.collider.tag.Contains("Player"))
         {
             //Do damage
-            collision.collider.GetComponent<Health>().TakeDamage(damage);
+            health = collision.collider.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(damage);
+            }
             Debug.Log("DO DAMAGE");
         }
         Debug.Log("I HIT: " + collision.collider.name);
