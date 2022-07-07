@@ -13,16 +13,20 @@ public class ProjectileMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
         if (this.gameObject.tag.Contains("Enemy"))
         {
-            rb.velocity = -(new Vector3 (transform.position.x, 1, transform.position.z) - new Vector3 (tempTarget.transform.position.x, 1, tempTarget.transform.position.z)) * speed;
+            rb.velocity = -(transform.position - tempTarget.transform.position) * speed;
         }
     }
     private void OnEnable()
     {
         if (target != null) tempTarget = target.transform;
-        rb.AddForce(player.transform.forward * speed);
+        if (gameObject.tag.Contains("Player"))
+        {
+            rb.AddForce(player.transform.forward * speed);
+            //rb.AddForce(transform.up * MainCamera.transform.rotation.x);
+            Debug.Log("camera rot x: " + MainCamera.transform.rotation.x);
+        }
     }
     // Start is called before the first frame update
     void Awake()
@@ -32,7 +36,7 @@ public class ProjectileMovement : MonoBehaviour
         objPooler = GameObject.FindObjectOfType<ObjectPooler>();
         if (this.gameObject.tag.Contains("Enemy"))
         {
-            target = GameObject.Find("PlayerCapsule").transform;
+            target = GameObject.Find("PlayerCameraRoot").GetComponent<Transform>();
         }
         else
         {
@@ -40,7 +44,6 @@ public class ProjectileMovement : MonoBehaviour
         }
         rb = GetComponentInChildren<Rigidbody>();
     }
-    
     public void DisableProjectile()
     {
         rb.velocity = Vector3.zero;
