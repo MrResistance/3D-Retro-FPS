@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WeaponAnimationUpdate();
+        
     }
     public void WeaponAnimationUpdate()
     {
@@ -74,6 +74,7 @@ public class Inventory : MonoBehaviour
             }
             else
             {
+                WeaponAnimationUpdate();
                 currentWeapon++;
             }
         }
