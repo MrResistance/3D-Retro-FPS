@@ -27,65 +27,36 @@ public class Inventory : MonoBehaviour
         {
             currentWeapon = Weapon.unarmed;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        WeaponAnimationUpdate();
     }
     public void WeaponAnimationUpdate()
     {
-        if (availableWeapons.Count > 1)
+        switch (((int)currentWeapon))
         {
-            //Debug.Log("More than 1 weapon available");
-            //currentWeapon = availableWeapons[(int)currentWeapon++];
-            for (int i = 0; i < availableWeapons.Count; i++)
-            {
-                //if (((int)availableWeapons[i]) == (int)currentWeapon)
-                //{
-                //    Debug.Log((((int)availableWeapons[i]) == (int)currentWeapon));
-                //}
-            }
-            foreach (Weapon weapon in availableWeapons)
-            {
-                if (availableWeapons[((int)weapon)] == currentWeapon)
-                {
-                    Debug.Log("available weapon " + availableWeapons[(int)weapon] + " current weapon " + currentWeapon);
-                }
-            }
+            case 0:
+                animator.Play("Unarmed");
+                break;
+            case 1:
+                animator.runtimeAnimatorController = knifeAnim;
+                animator.SetTrigger("Ready");
+                break;
+            case 2:
+                animator.runtimeAnimatorController = pistolAnim;
+                animator.SetTrigger("Ready");
+                break;
+            case 3:
+                animator.runtimeAnimatorController = shotgunAnim;
+                animator.SetTrigger("Ready");
+                break;
+            case 4:
+                animator.runtimeAnimatorController = minigunAnim;
+                animator.SetTrigger("Ready");
+                break;
+            case 5:
+                animator.runtimeAnimatorController = cannonAnim;
+                animator.SetTrigger("Ready");
+                break;
         }
-        //switch (((int)currentWeapon))
-        //{
-        //case 0:
-        //        animator.Play("Unarmed");
-        //        break;
-        //case 1:
-        //        animator.runtimeAnimatorController = knifeAnim;
-        //        animator.SetTrigger("Ready");
-        //        currentWeapon++;
-        //        break;
-        //case 2:
-        //        animator.runtimeAnimatorController = pistolAnim;
-        //        animator.SetTrigger("Ready");
-        //        currentWeapon++;
-        //        break;
-        //case 3:
-        //        animator.runtimeAnimatorController = shotgunAnim;
-        //        animator.SetTrigger("Ready");
-        //        currentWeapon++;
-        //        break;
-        //case 4:
-        //        animator.runtimeAnimatorController = minigunAnim;
-        //        animator.SetTrigger("Ready");
-        //        currentWeapon++;
-        //        break;
-        //case 5:
-        //        animator.runtimeAnimatorController = cannonAnim;
-        //        animator.SetTrigger("Ready");
-        //        currentWeapon++;
-        //        break;       
-        //}
     }
     public void OnShoot()
     {
@@ -100,15 +71,19 @@ public class Inventory : MonoBehaviour
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            if ((((int)currentWeapon) + 1) == 6)
-            {
-                currentWeapon = 0;
-            }
-            else
-            {
-                WeaponAnimationUpdate();
-                //currentWeapon++;
-            }
+            //if ((((int)currentWeapon) + 1) == 6)
+            //{
+            //    currentWeapon = 0;
+            //}
+            //else
+            //{
+            //    WeaponAnimationUpdate();
+            //    //currentWeapon++;
+            //}
+            int currentIndex = availableWeapons.IndexOf(currentWeapon);
+            int nextIndex = (currentIndex + 1) % availableWeapons.Count;
+            currentWeapon = availableWeapons[nextIndex];
+            WeaponAnimationUpdate();
         }
     }
     public enum Weapon
