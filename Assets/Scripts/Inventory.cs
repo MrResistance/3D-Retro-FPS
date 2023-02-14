@@ -5,9 +5,9 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public Weapon currentWeapon;
+    public List<Weapon> availableWeapons;
     public Animator animator;
-    public AnimatorOverrideController pistolAnim, shotgunAnim, minigunAnim, cannonAnim;
-    public bool hasKnife = false, hasPistol = false, hasShotgun = false, hasMinigun = false, hasCannon = false;
+    public AnimatorOverrideController knifeAnim, pistolAnim, shotgunAnim, minigunAnim, cannonAnim;
     public float fireRate = 0.5F;
     private float nextFire = 0.0F;
     private PlayerAttack playerAttack;
@@ -15,10 +15,18 @@ public class Inventory : MonoBehaviour
     private void Awake()
     {
         playerAttack = GetComponent<PlayerAttack>();
+        knifeAnim = animator.runtimeAnimatorController as AnimatorOverrideController;
     }
     void Start()
     {
-        currentWeapon = Weapon.unarmed;
+        if (availableWeapons.Count > 0)
+        {
+            currentWeapon = availableWeapons[0];
+        }
+        else
+        {
+            currentWeapon = Weapon.unarmed;
+        }
     }
 
     // Update is called once per frame
@@ -28,36 +36,60 @@ public class Inventory : MonoBehaviour
     }
     public void WeaponAnimationUpdate()
     {
-        switch (((int)currentWeapon))
+        if (availableWeapons.Count > 1)
         {
-        case 0:
-                animator.Play("Unarmed");
-                break;
-        case 1:
-                if (hasKnife)
-                animator.SetTrigger("Ready");
-                break;
-        case 2:
-                if (hasPistol)
-                animator.runtimeAnimatorController = pistolAnim;
-                break;
-        case 3:
-                if (hasShotgun)
-                animator.runtimeAnimatorController = shotgunAnim;
-                break;
-        case 4:
-                if (hasMinigun)
-                animator.runtimeAnimatorController = minigunAnim;
-                break;
-        case 5:
-                if (hasCannon)
-                animator.runtimeAnimatorController = cannonAnim;
-                break;       
+            //Debug.Log("More than 1 weapon available");
+            //currentWeapon = availableWeapons[(int)currentWeapon++];
+            for (int i = 0; i < availableWeapons.Count; i++)
+            {
+                //if (((int)availableWeapons[i]) == (int)currentWeapon)
+                //{
+                //    Debug.Log((((int)availableWeapons[i]) == (int)currentWeapon));
+                //}
+            }
+            foreach (Weapon weapon in availableWeapons)
+            {
+                if (availableWeapons[((int)weapon)] == currentWeapon)
+                {
+                    Debug.Log("available weapon " + availableWeapons[(int)weapon] + " current weapon " + currentWeapon);
+                }
+            }
         }
+        //switch (((int)currentWeapon))
+        //{
+        //case 0:
+        //        animator.Play("Unarmed");
+        //        break;
+        //case 1:
+        //        animator.runtimeAnimatorController = knifeAnim;
+        //        animator.SetTrigger("Ready");
+        //        currentWeapon++;
+        //        break;
+        //case 2:
+        //        animator.runtimeAnimatorController = pistolAnim;
+        //        animator.SetTrigger("Ready");
+        //        currentWeapon++;
+        //        break;
+        //case 3:
+        //        animator.runtimeAnimatorController = shotgunAnim;
+        //        animator.SetTrigger("Ready");
+        //        currentWeapon++;
+        //        break;
+        //case 4:
+        //        animator.runtimeAnimatorController = minigunAnim;
+        //        animator.SetTrigger("Ready");
+        //        currentWeapon++;
+        //        break;
+        //case 5:
+        //        animator.runtimeAnimatorController = cannonAnim;
+        //        animator.SetTrigger("Ready");
+        //        currentWeapon++;
+        //        break;       
+        //}
     }
     public void OnShoot()
     {
-        if (currentWeapon != Weapon.unarmed)
+        if (currentWeapon != Weapon.unarmed && currentWeapon != Weapon.knife)
         {
             animator.SetTrigger("Attack");
             playerAttack.ShootProjectile();
@@ -75,7 +107,7 @@ public class Inventory : MonoBehaviour
             else
             {
                 WeaponAnimationUpdate();
-                currentWeapon++;
+                //currentWeapon++;
             }
         }
     }

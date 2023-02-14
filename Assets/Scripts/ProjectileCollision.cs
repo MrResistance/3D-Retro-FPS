@@ -21,9 +21,9 @@ public class ProjectileCollision : MonoBehaviour
             {
                 health.TakeDamage(damage);
             }
-            Debug.Log("DO DAMAGE");
+            //Debug.Log("DO DAMAGE");
         }
-        Debug.Log("I HIT: " + collision.collider.name);
+        //Debug.Log("I HIT: " + collision.collider.name);
         pm.DisableProjectile();
     }
 }
