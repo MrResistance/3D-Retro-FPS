@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Inventory : MonoBehaviour
 {
@@ -71,17 +72,16 @@ public class Inventory : MonoBehaviour
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            //if ((((int)currentWeapon) + 1) == 6)
-            //{
-            //    currentWeapon = 0;
-            //}
-            //else
-            //{
-            //    WeaponAnimationUpdate();
-            //    //currentWeapon++;
-            //}
             int currentIndex = availableWeapons.IndexOf(currentWeapon);
-            int nextIndex = (currentIndex + 1) % availableWeapons.Count;
+            int nextIndex = 0;
+            if (Mouse.current.scroll.ReadValue().normalized.y == 1)
+            {
+                nextIndex = (currentIndex + 1) % availableWeapons.Count;
+            }
+            else
+            {
+                nextIndex = (currentIndex - 1) % availableWeapons.Count;
+            }
             currentWeapon = availableWeapons[nextIndex];
             WeaponAnimationUpdate();
         }

@@ -25,7 +25,7 @@ public class ProjectileMovement : MonoBehaviour
         {
             rb.AddForce(player.transform.forward * speed);
             //rb.AddForce(transform.up * MainCamera.transform.rotation.x);
-            Debug.Log("camera rot x: " + MainCamera.transform.rotation.x);
+            //Debug.Log("camera rot x: " + MainCamera.transform.rotation.x);
         }
     }
     // Start is called before the first frame update
