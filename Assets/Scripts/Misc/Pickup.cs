@@ -13,9 +13,12 @@ public class Pickup : MonoBehaviour
         {
             if (isWeapon)
             {
-                playerInventory.availableWeapons.Add((Inventory.Weapon)thisWeapon);
+                if (playerInventory.AddWeaponToAvailableWeapons((Inventory.Weapon)thisWeapon))
+                {
+                    gameObject.SetActive(false);
+                }
                 playerInventory.WeaponAnimationUpdate();
-                gameObject.SetActive(false);
+                
             }
         }
     }

@@ -87,6 +87,18 @@ public class Inventory : MonoBehaviour
             WeaponAnimationUpdate();
         }
     }
+    public bool AddWeaponToAvailableWeapons(Weapon weapon)
+    {
+        if (!availableWeapons.Contains(weapon))
+        {
+            availableWeapons.Add(weapon);
+            return true;
+        }
+        else
+        {
+            return false;
+        } 
+    }
     public enum Weapon
     {
         unarmed,

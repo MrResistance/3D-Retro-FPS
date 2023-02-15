@@ -19,11 +19,11 @@ public class Health : MonoBehaviour
             if (this.gameObject.tag.Contains("Enemy"))
             {
                 anim.Play("Death");
-                Invoke(nameof(DestroyEnemy), 0.3f);
+                Invoke(nameof(DestroyEntity), 0.3f);
             }
         }
     }
-    private void DestroyEnemy()
+    private void DestroyEntity()
     {
         gameObject.SetActive(false);
     }
