@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +9,8 @@ public class Inventory : MonoBehaviour
     public Weapon currentWeapon;
     public List<Weapon> availableWeapons;
     public Animator animator;
-    public AnimatorOverrideController knifeAnim, pistolAnim, shotgunAnim, minigunAnim, cannonAnim;
+    public AnimatorController knifeAnim;
+    public AnimatorOverrideController pistolAnim, shotgunAnim, minigunAnim, cannonAnim;
     public float fireRate = 0.5F;
     private float nextFire = 0.0F;
     private PlayerAttack playerAttack;
@@ -16,7 +18,6 @@ public class Inventory : MonoBehaviour
     private void Awake()
     {
         playerAttack = GetComponent<PlayerAttack>();
-        knifeAnim = animator.runtimeAnimatorController as AnimatorOverrideController;
     }
     void Start()
     {
@@ -61,7 +62,7 @@ public class Inventory : MonoBehaviour
     }
     public void OnShoot()
     {
-        if (currentWeapon != Weapon.unarmed && currentWeapon != Weapon.knife)
+        if (currentWeapon != Weapon.unarmed)
         {
             animator.SetTrigger("Attack");
             playerAttack.ShootProjectile();
