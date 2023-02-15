@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5088541549266517865}
   - component: {fileID: 5088541549266517870}
   - component: {fileID: 7456817261937489412}
+  - component: {fileID: 394708230}
   m_Layer: 8
   m_Name: Pickup
   m_TagString: Pickup
@@ -133,4 +134,19 @@ MonoBehaviour:
   target: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
-  damping: 360
+  damping: 100
+--- !u!114 &394708230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5088541549266517867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1482cfadeecc9ef4393ab5040745d012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 0}
+  thisWeapon: 1
+  isWeapon: 1
