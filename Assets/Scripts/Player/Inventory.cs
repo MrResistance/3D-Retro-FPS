@@ -65,7 +65,6 @@ public class Inventory : MonoBehaviour
         if (currentWeapon != Weapon.unarmed)
         {
             animator.SetTrigger("Attack");
-            //playerAttack.ShootProjectile();
         }
     }
     public void OnSwitchWeapon()
@@ -82,6 +81,15 @@ public class Inventory : MonoBehaviour
             else
             {
                 nextIndex = (currentIndex - 1) % availableWeapons.Count;
+            }
+            // To ensure that the nextIndex field doesn't go outside the bounds of the array
+            if (nextIndex < 0)
+            {
+                nextIndex = availableWeapons.Count - 1;
+            }
+            if (nextIndex > availableWeapons.Count)
+            {
+                nextIndex = 0;
             }
             currentWeapon = availableWeapons[nextIndex];
             WeaponAnimationUpdate();

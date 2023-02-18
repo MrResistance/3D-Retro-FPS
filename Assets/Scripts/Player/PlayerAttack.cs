@@ -15,9 +15,6 @@ public class PlayerAttack : MonoBehaviour
     }
     public void ShootProjectile()
     {
-        //if (inv.currentWeapon == Inventory.Weapon.pistol)
-        //{
-            objPooler.SpawnFromPool("Player Projectile", firePos.transform.position, Quaternion.identity);
-        //}
+        objPooler.SpawnFromPool("Player Projectile", firePos.transform.position, Quaternion.identity);
     }
 }
