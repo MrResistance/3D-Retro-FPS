@@ -3930,8 +3930,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
-  attackRadius: 1
-  attackDamage: 100
+  meleeAttackRadius: 1
+  meleeAttackDamage: 10
 --- !u!43 &301426207
 Mesh:
   m_ObjectHideFlags: 0
@@ -10790,9 +10790,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc14b892cfbdfd745973792defde7911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurt: []
+  hurt:
+  - {fileID: 8300000, guid: 0858a30d68817b24b9e53d9a0c900c66, type: 3}
+  - {fileID: 8300000, guid: 18e8b160f1de10845a86748f8339306d, type: 3}
   death: []
-  fireWeapon: []
+  fireWeapon:
+  - {fileID: 8300000, guid: 2a59e4b5d5223f041926e188dc564c4a, type: 3}
 --- !u!4 &7029627253670739393
 Transform:
   m_ObjectHideFlags: 0

@@ -26,6 +26,13 @@ public class Health : MonoBehaviour
                 Invoke(nameof(DestroyEntity), 0.3f);
             }
         }
+        if (this.gameObject.tag.Contains("Player"))
+        {
+            if (health <= 0)
+            {
+                sfxManager.PlayDeathSound();
+            }
+        }
     }
     private void DestroyEntity()
     {
