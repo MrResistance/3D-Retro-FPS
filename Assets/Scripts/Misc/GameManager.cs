@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public gameState currentState;
     private bool created;
     private UI_Manager uiManager;
+    private DJ dj;
     private void Awake()
     {
         if (!created)
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Awake: " + this.gameObject);
         }
         uiManager = GameObject.Find("UI_Manager").GetComponent<UI_Manager>();
+        dj = GameObject.Find("DJ").GetComponent<DJ>();
     }
     public void pauseGame()
     {
@@ -26,11 +28,13 @@ public class GameManager : MonoBehaviour
     {
         currentState = gameState.menu;
         uiManager.LoadMainMenuScene();
+        dj.PlayMenuMusic();
     }
     public void playGame()
     {
         currentState = gameState.game;
         uiManager.LoadGameScene();
+        dj.PlayGameMusic();
     }
     public void gameOver()
     {

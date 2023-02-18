@@ -21,7 +21,7 @@ public class UI_Manager : MonoBehaviour
     }
     public void LoadMainMenuScene()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Tutorial");
     }
     public void QuitApp()
     {

@@ -9,6 +9,16 @@ public class DJ : MonoBehaviour
     public List<AudioClip> Mixtape;
     public AudioClip menuMusic;
     public GameManager gm;
+    private bool created;
+    void Awake()
+    {
+        if (!created)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+            Debug.Log("Awake: " + this.gameObject);
+        }
+    }
     void Start()
     {
         aS = GetComponent<AudioSource>();
@@ -16,23 +26,44 @@ public class DJ : MonoBehaviour
     }
     public void PlayGameMusic()
     {
-        aS.clip = Mixtape[Random.Range(0, Mixtape.Count)];
-        aS.Play();
+        FadeToNewClip(Mixtape[Random.Range(0, Mixtape.Count)], 1.5f);
     }
     public void PlayMenuMusic()
     {
-        aS.clip = menuMusic;
-        aS.Play();
+        FadeToNewClip(menuMusic, 1f);
     }
     public void StopPlayingMusic()
     {
         aS.Stop();
     }
-    void FixedUpdate()
+    IEnumerator FadeAudio(AudioClip clip, float fadeTime)
     {
-        if (!aS.isPlaying && gm.currentState == GameManager.gameState.game)
+        float currentTime = 0;
+        float startVolume = aS.volume;
+
+        while (currentTime < fadeTime)
         {
-            PlayGameMusic();
+            currentTime += Time.deltaTime;
+            aS.volume = Mathf.Lerp(startVolume, 0, currentTime / fadeTime);
+            yield return null;
+        }
+
+        aS.Stop();
+        aS.clip = clip;
+        aS.Play();
+
+        currentTime = 0;
+
+        while (currentTime < fadeTime)
+        {
+            currentTime += Time.deltaTime;
+            aS.volume = Mathf.Lerp(0, startVolume, currentTime / fadeTime);
+            yield return null;
         }
     }
+    public void FadeToNewClip(AudioClip newClip, float fadeTime)
+    {
+        StartCoroutine(FadeAudio(newClip, fadeTime));
+    }
+
 }
