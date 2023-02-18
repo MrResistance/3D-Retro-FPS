@@ -65,12 +65,12 @@ public class Inventory : MonoBehaviour
         if (currentWeapon != Weapon.unarmed)
         {
             animator.SetTrigger("Attack");
-            playerAttack.ShootProjectile();
+            //playerAttack.ShootProjectile();
         }
     }
     public void OnSwitchWeapon()
     {
-        if (Time.time > nextFire)
+        if (Time.time > nextFire && availableWeapons.Count > 0)
         {
             nextFire = Time.time + fireRate;
             int currentIndex = availableWeapons.IndexOf(currentWeapon);

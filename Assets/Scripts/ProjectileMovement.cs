@@ -23,7 +23,16 @@ public class ProjectileMovement : MonoBehaviour
         if (target != null) tempTarget = target.transform;
         if (gameObject.tag.Contains("Player"))
         {
-            rb.AddForce(player.transform.forward * speed);
+            Vector3 direction = player.transform.forward;
+            direction.y = MainCamera.transform.forward.y;
+            rb.velocity = direction.normalized * speed;
+
+
+            //rb.AddForce((player.transform.forward + MainCamera.transform.up) * speed);
+
+            //Vector3 direction = player.transform.forward + new Vector3(0f, MainCamera.transform.rotation.eulerAngles.y, 0f);
+            //rb.velocity = direction.normalized * speed;
+
             //rb.AddForce(transform.up * MainCamera.transform.rotation.x);
             //Debug.Log("camera rot x: " + MainCamera.transform.rotation.x);
         }
