@@ -7924,7 +7924,7 @@ MonoBehaviour:
   pools:
   - tag: Enemy Projectile
     prefab: {fileID: 2406943198113280055, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
-    size: 50
+    size: 100
     parent: {fileID: 1426023784}
   - tag: Player Projectile
     prefab: {fileID: 3709489187042908511, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
