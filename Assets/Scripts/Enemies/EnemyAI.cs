@@ -111,7 +111,7 @@ public class EnemyAI : MonoBehaviour
     {
         //thisY = transform.localToWorldMatrix;
         sfxManager.PlayFireWeaponSound();
-        objPooler.SpawnFromPool("Enemy Projectile", new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity);
+        objPooler.SpawnFromPool("Enemy Projectile", new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
         //Rigidbody rb = Instantiate(projectile, new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity).GetComponent<Rigidbody>();
         //rb.AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
     }
