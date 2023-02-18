@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
@@ -32,6 +31,7 @@ public class EnemyAI : MonoBehaviour
     public ObjectPooler objPooler;
 
     private Health health;
+    private SFX_Manager sfxManager;
 
     private void Awake()
     {
@@ -42,6 +42,7 @@ public class EnemyAI : MonoBehaviour
         anim.SetFloat("attackSpeed", timeBetweenAttacks);
         mobBillboardAnimation = GetComponentInChildren<MobBillboardAnimation>();
         objPooler = GameObject.FindObjectOfType<ObjectPooler>();
+        sfxManager = GetComponent<SFX_Manager>();
     }
 
     private void Update()
@@ -109,6 +110,7 @@ public class EnemyAI : MonoBehaviour
     public void FireProjectile()
     {
         //thisY = transform.localToWorldMatrix;
+        sfxManager.PlayFireWeaponSound();
         objPooler.SpawnFromPool("Enemy Projectile", new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity);
         //Rigidbody rb = Instantiate(projectile, new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity).GetComponent<Rigidbody>();
         //rb.AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
