@@ -11,8 +11,8 @@ public class Inventory : MonoBehaviour
     public Animator animator;
     public AnimatorController knifeAnim;
     public AnimatorOverrideController pistolAnim, shotgunAnim, minigunAnim, cannonAnim;
-    public float fireRate = 0.5F;
-    private float nextFire = 0.0F;
+    public float weaponSwapSpeed = 0.5F;
+    private float nextSwap = 0.0F;
     private PlayerAttack playerAttack;
     // Start is called before the first frame update
     private void Awake()
@@ -69,9 +69,9 @@ public class Inventory : MonoBehaviour
     }
     public void OnSwitchWeapon()
     {
-        if (Time.time > nextFire && availableWeapons.Count > 0)
+        if (Time.time > nextSwap && availableWeapons.Count > 0)
         {
-            nextFire = Time.time + fireRate;
+            nextSwap = Time.time + weaponSwapSpeed;
             int currentIndex = availableWeapons.IndexOf(currentWeapon);
             int nextIndex = 0;
             if (Mouse.current.scroll.ReadValue().normalized.y == 1)
