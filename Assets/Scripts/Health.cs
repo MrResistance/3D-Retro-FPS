@@ -16,9 +16,10 @@ public class Health : MonoBehaviour
     {
         health -= damage;
         sfxManager.PlayHurtSound();
-        if (health <= 0)
+        if (this.gameObject.tag.Contains("Enemy"))
         {
-            if (this.gameObject.tag.Contains("Enemy"))
+            anim.Play("HitFront");
+            if (health <= 0)
             {
                 anim.Play("Death");
                 sfxManager.PlayDeathSound();
