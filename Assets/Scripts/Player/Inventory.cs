@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +8,7 @@ public class Inventory : MonoBehaviour
     public Weapon currentWeapon;
     public List<Weapon> availableWeapons;
     public Animator animator;
-    public AnimatorController knifeAnim;
+    public RuntimeAnimatorController knifeAnim;
     public AnimatorOverrideController pistolAnim, shotgunAnim, minigunAnim, cannonAnim;
     public float weaponSwapSpeed = 0.5F;
     private float nextSwap = 0.0F;
