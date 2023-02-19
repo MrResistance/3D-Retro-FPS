@@ -1246,6 +1246,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d022eaa31ae35254ca86f76b08a9d41e, type: 3}
   - {fileID: 8300000, guid: 95994f3038ed3724ab38a0f44329c7e2, type: 3}
   menuMusic: {fileID: 8300000, guid: 232abea655435514fb1ce8131db19e71, type: 3}
+  winSound: {fileID: 8300000, guid: 4a2662a9d3b03d44eaa39a164ffd57d6, type: 3}
+  lossSound: {fileID: 8300000, guid: 5b9488e45f8b787449343f707792f9f2, type: 3}
   gm: {fileID: 0}
 --- !u!4 &1475590105
 Transform:

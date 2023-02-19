@@ -7,7 +7,7 @@ public class DJ : MonoBehaviour
 {
     private AudioSource aS;
     public List<AudioClip> Mixtape;
-    public AudioClip menuMusic;
+    public AudioClip menuMusic, winSound, lossSound;
     public GameManager gm;
     private bool created;
     void Awake()
@@ -23,6 +23,14 @@ public class DJ : MonoBehaviour
     {
         aS = GetComponent<AudioSource>();
         PlayMenuMusic();
+    }
+    public void PlayWinSound()
+    {
+        aS.PlayOneShot(winSound);
+    }
+    public void PlayLossSound()
+    {
+        aS.PlayOneShot(lossSound);
     }
     public void PlayGameMusic()
     {

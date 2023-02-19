@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     public float health = 100f;
     private Animator anim, healthUIanim;
     private SFX_Manager sfxManager;
+    private GameManager gameManager;
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
@@ -15,6 +16,7 @@ public class Health : MonoBehaviour
         {
             healthUIanim = GameObject.Find("HealthUI").GetComponent<Animator>();
             healthUIanim.SetFloat("PlayerHealth", health);
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
     }
     public void TakeDamage(float damage)
@@ -36,6 +38,7 @@ public class Health : MonoBehaviour
             healthUIanim.SetFloat("PlayerHealth", health);
             if (health <= 0)
             {
+                gameManager.gameOver();
                 sfxManager.PlayDeathSound();
             }
         }

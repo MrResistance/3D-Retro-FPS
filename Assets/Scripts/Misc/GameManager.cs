@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Confined;
         currentState = gameState.paused;
+        Time.timeScale = 0;
     }
 
     public void goToMainMenu()
@@ -39,11 +40,14 @@ public class GameManager : MonoBehaviour
         currentState = gameState.game;
         uiManager.LoadGameScene();
         dj.PlayGameMusic();
+        Time.timeScale = 1;
     }
     public void gameOver()
     {
         Cursor.lockState = CursorLockMode.Confined;
         currentState = gameState.gameOver;
+        dj.PlayLossSound();
+        Time.timeScale = 0;
     }
     public enum gameState
     {
