@@ -5,12 +5,17 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public float health = 100f;
-    private Animator anim;
+    private Animator anim, healthUIanim;
     private SFX_Manager sfxManager;
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
         sfxManager= GetComponent<SFX_Manager>();
+        if (this.gameObject.tag.Contains("Player"))
+        {
+            healthUIanim = GameObject.Find("HealthUI").GetComponent<Animator>();
+            healthUIanim.SetFloat("PlayerHealth", health);
+        }
     }
     public void TakeDamage(float damage)
     {
@@ -28,6 +33,7 @@ public class Health : MonoBehaviour
         }
         if (this.gameObject.tag.Contains("Player"))
         {
+            healthUIanim.SetFloat("PlayerHealth", health);
             if (health <= 0)
             {
                 sfxManager.PlayDeathSound();
