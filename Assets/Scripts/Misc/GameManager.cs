@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
         }
         uiManager = GameObject.Find("UI_Manager").GetComponent<UI_Manager>();
         dj = GameObject.Find("DJ").GetComponent<DJ>();
+        Cursor.lockState = CursorLockMode.Confined;
     }
     public void pauseGame()
     {
