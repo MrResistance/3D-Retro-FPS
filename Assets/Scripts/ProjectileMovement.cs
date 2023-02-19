@@ -11,6 +11,8 @@ public class ProjectileMovement : MonoBehaviour
     public ObjectPooler objPooler;
     public Camera MainCamera;
     public float speed = 1f;
+    private AudioSource aS;
+    public AudioClip fireSound, contactSound;
 
     private void FixedUpdate()
     {
@@ -24,12 +26,14 @@ public class ProjectileMovement : MonoBehaviour
         if (target != null) tempTarget = target.transform;
         if (gameObject.tag.Contains("Player"))
         {
+            aS.PlayOneShot(fireSound);
             Vector3 direction = Camera.main.transform.forward;
             rb.velocity = direction.normalized * speed;
         }
     }
     void Awake()
     {
+        aS = GetComponentInChildren<AudioSource>();
         player = GameObject.Find("PlayerCapsule").transform;
         MainCamera = Camera.main;
         objPooler = GameObject.FindObjectOfType<ObjectPooler>();
