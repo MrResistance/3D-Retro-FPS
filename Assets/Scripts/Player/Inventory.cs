@@ -21,6 +21,7 @@ public class Inventory : MonoBehaviour
     }
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         if (availableWeapons.Count > 0)
         {
             currentWeapon = availableWeapons[0];
