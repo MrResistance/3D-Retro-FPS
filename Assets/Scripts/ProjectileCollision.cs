@@ -16,7 +16,6 @@ public class ProjectileCollision : MonoBehaviour
         if (collision.collider.tag.Contains("Enemy") || collision.collider.tag.Contains("Player"))
         {
             //Do damage
-            Debug.Log("I HIT " + collision.gameObject.name + " Which has the tag: " + collision.gameObject.tag);
             health = collision.collider.GetComponent<Health>();
             if (health != null)
             {
