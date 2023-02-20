@@ -69,14 +69,12 @@ namespace StarterAssets
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 
-		private GameManager gameManager;
 		private const float _threshold = 0.01f;
 		
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
 		private void Awake()
 		{
-			gameManager = GameManager.instance;
 			// get a reference to our main camera
 			if (_mainCamera == null)
 			{
@@ -97,7 +95,7 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			if (gameManager.currentState == GameManager.gameState.game)
+			if (GameManager.instance.currentState == GameManager.gameState.game)
 			{
 				JumpAndGravity();
 				GroundedCheck();
@@ -107,7 +105,7 @@ namespace StarterAssets
 
 		private void LateUpdate()
 		{
-			if (gameManager.currentState == GameManager.gameState.game)
+			if (GameManager.instance.currentState == GameManager.gameState.game)
 			{
                 CameraRotation();
             }
