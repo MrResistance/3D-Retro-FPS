@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Confined;
         currentState = gameState.gameOver;
+        dj.StopPlayingMusic();
         dj.PlayLossSound();
         Time.timeScale = 0;
     }
