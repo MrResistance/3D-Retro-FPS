@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public float health = 100f;
-    private Animator anim, healthUIanim;
+    private Animator anim, healthUIanim, faceUIanim;
     private SFX_Manager sfxManager;
     private GameManager gameManager;
     private void Awake()
@@ -16,6 +16,8 @@ public class Health : MonoBehaviour
         {
             healthUIanim = GameObject.Find("HealthUI").GetComponent<Animator>();
             healthUIanim.SetFloat("PlayerHealth", health);
+            faceUIanim = GameObject.Find("Face").GetComponent<Animator>();
+            faceUIanim.SetFloat("PlayerHealth", health);
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
     }
@@ -36,6 +38,7 @@ public class Health : MonoBehaviour
         if (this.gameObject.tag.Contains("Player"))
         {
             healthUIanim.SetFloat("PlayerHealth", health);
+            faceUIanim.SetFloat("PlayerHealth", health);
             if (health <= 0)
             {
                 gameManager.gameOver();
