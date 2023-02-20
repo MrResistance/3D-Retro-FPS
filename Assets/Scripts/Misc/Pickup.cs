@@ -11,6 +11,11 @@ public class Pickup : MonoBehaviour
     public Item thisItem;
     public bool isItem = false;
     public float healthRestoreAmount = 25f;
+
+    private void Awake()
+    {
+        playerInventory = GameObject.Find("PlayerCapsule").GetComponent<Inventory>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag.Contains("Player"))
