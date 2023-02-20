@@ -9,16 +9,9 @@ public class DJ : MonoBehaviour
     public List<AudioClip> Mixtape;
     public AudioClip menuMusic, winSound, lossSound;
     public GameManager gm;
-    private bool created;
-    private static DJ instance;
+    public static DJ instance;
     void Awake()
     {
-        //if (!created)
-        //{
-        //    DontDestroyOnLoad(this.gameObject);
-        //    created = true;
-        //    Debug.Log("Awake: " + this.gameObject);
-        //}
         if (instance == null)
         {
             instance = this;

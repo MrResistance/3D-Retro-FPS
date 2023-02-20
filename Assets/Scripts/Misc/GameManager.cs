@@ -5,19 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public gameState currentState;
-    private bool created;
     private UI_Manager uiManager;
     private DJ dj;
-    private static GameManager instance;
+    public static GameManager instance;
 
     private void Awake()
     {
-        //if (!created)
-        //{
-        //    DontDestroyOnLoad(this.gameObject);
-        //    created = true;
-        //    Debug.Log("Awake: " + this.gameObject);
-        //}
         if (instance == null)
         {
             instance = this;
