@@ -8304,6 +8304,10 @@ MonoBehaviour:
     prefab: {fileID: 5079664319496072367, guid: b30c0b66524742243b377513cd01c910, type: 3}
     size: 50
     parent: {fileID: 63539131}
+  - tag: Rocket Projectile
+    prefab: {fileID: 902876746962050504, guid: ebd43d203ffb5024792e9f119794f280, type: 3}
+    size: 50
+    parent: {fileID: 63539131}
 --- !u!4 &449859942
 Transform:
   m_ObjectHideFlags: 0

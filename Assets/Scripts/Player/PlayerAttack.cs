@@ -40,6 +40,7 @@ public class PlayerAttack : MonoBehaviour
             case Inventory.Weapon.minigun:
                 break;
             case Inventory.Weapon.cannon:
+                objPooler.SpawnFromPool("Rocket Projectile", firePos.transform.position, Quaternion.identity);
                 break;
             default:
                 break;
