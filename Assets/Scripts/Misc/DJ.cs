@@ -10,14 +10,25 @@ public class DJ : MonoBehaviour
     public AudioClip menuMusic, winSound, lossSound;
     public GameManager gm;
     private bool created;
+    private static DJ instance;
     void Awake()
     {
-        if (!created)
+        //if (!created)
+        //{
+        //    DontDestroyOnLoad(this.gameObject);
+        //    created = true;
+        //    Debug.Log("Awake: " + this.gameObject);
+        //}
+        if (instance == null)
         {
+            instance = this;
             DontDestroyOnLoad(this.gameObject);
-            created = true;
-            Debug.Log("Awake: " + this.gameObject);
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        DJ Instance = DJ.instance;
     }
     void Start()
     {

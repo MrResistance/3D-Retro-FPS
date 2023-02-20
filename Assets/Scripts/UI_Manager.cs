@@ -6,14 +6,25 @@ using UnityEngine.SceneManagement;
 public class UI_Manager : MonoBehaviour
 {
     private bool created;
+    private static UI_Manager instance;
     void Awake()
     {
-        if (!created)
+        //if (!created)
+        //{
+        //    DontDestroyOnLoad(this.gameObject);
+        //    created = true;
+        //    Debug.Log("Awake: " + this.gameObject);
+        //}
+        if (instance == null)
         {
+            instance = this;
             DontDestroyOnLoad(this.gameObject);
-            created = true;
-            Debug.Log("Awake: " + this.gameObject);
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        UI_Manager Instance = UI_Manager.instance;
     }
     public void LoadGameScene()
     {

@@ -8,14 +8,26 @@ public class GameManager : MonoBehaviour
     private bool created;
     private UI_Manager uiManager;
     private DJ dj;
+    private static GameManager instance;
+
     private void Awake()
     {
-        if (!created)
+        //if (!created)
+        //{
+        //    DontDestroyOnLoad(this.gameObject);
+        //    created = true;
+        //    Debug.Log("Awake: " + this.gameObject);
+        //}
+        if (instance == null)
         {
+            instance = this;
             DontDestroyOnLoad(this.gameObject);
-            created = true;
-            Debug.Log("Awake: " + this.gameObject);
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        GameManager Instance = GameManager.instance;
         uiManager = GameObject.Find("UI_Manager").GetComponent<UI_Manager>();
         dj = GameObject.Find("DJ").GetComponent<DJ>();
         Cursor.lockState = CursorLockMode.Confined;
