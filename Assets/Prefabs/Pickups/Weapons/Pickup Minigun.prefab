@@ -11,21 +11,37 @@ PrefabInstance:
       propertyPath: thisWeapon
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5088541549266517864, guid: 630b231adc5190542be413249cb601c1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4942581124436334118, guid: 70ed3aadf0dc4724f92bc9d80f512c43, type: 3}
     - target: {fileID: 5088541549266517867, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_Name
       value: Pickup Minigun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088541549266517870, guid: 630b231adc5190542be413249cb601c1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5088541549266517871, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5088541549266517871, guid: 630b231adc5190542be413249cb601c1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088541549266517871, guid: 630b231adc5190542be413249cb601c1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088541549266517871, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.86
       objectReference: {fileID: 0}
     - target: {fileID: 5088541549266517871, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 5088541549266517871, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_LocalPosition.z

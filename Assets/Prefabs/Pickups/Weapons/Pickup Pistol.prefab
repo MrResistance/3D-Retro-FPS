@@ -14,18 +14,18 @@ PrefabInstance:
     - target: {fileID: 5088541549266517864, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7690847685705645272, guid: a34ac940988e89248bbc4450ed1dde5f, type: 3}
+      objectReference: {fileID: 9102618240673112304, guid: 70ed3aadf0dc4724f92bc9d80f512c43, type: 3}
     - target: {fileID: 5088541549266517867, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_Name
       value: Pickup Pistol
       objectReference: {fileID: 0}
     - target: {fileID: 5088541549266517870, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_Size.x
-      value: 0.25
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5088541549266517870, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_Size.y
-      value: 0.25
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5088541549266517871, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_RootOrder
@@ -33,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5088541549266517871, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5088541549266517871, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5088541549266517871, guid: 630b231adc5190542be413249cb601c1, type: 3}
       propertyPath: m_LocalPosition.x
