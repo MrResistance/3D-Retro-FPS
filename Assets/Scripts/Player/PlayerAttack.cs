@@ -28,7 +28,14 @@ public class PlayerAttack : MonoBehaviour
                 objPooler.SpawnFromPool("Pistol Projectile", firePos.transform.position, Quaternion.identity);
                 break;
             case Inventory.Weapon.shotgun:
-                objPooler.SpawnFromPool("Shotgun Projectile", firePos.transform.position, Quaternion.identity);
+                int pelletCount = Random.Range(6,11);
+                for (int i = 0; i < pelletCount; i++)
+                {
+                    float randomX = Random.Range(-0.5f, 0.5f);
+                    float randomY = Random.Range(-0.5f, 0.5f);
+                    objPooler.SpawnFromPool("Shotgun Projectile", new Vector3(firePos.transform.position.x + randomX, firePos.transform.position.y + randomY, firePos.transform.position.z), Quaternion.identity);
+
+                }
                 break;
             case Inventory.Weapon.minigun:
                 break;
