@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7456817261937489412}
   - component: {fileID: 394708230}
   m_Layer: 8
-  m_Name: Pickup
+  m_Name: Pickup Knife
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 03501cd0f962697498d47ef656214abe, type: 3}
+  m_Sprite: {fileID: 8200041520447862417, guid: a34ac940988e89248bbc4450ed1dde5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,5 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 0}
+  playerHealth: {fileID: 0}
   thisWeapon: 1
   isWeapon: 1
+  thisItem: 0
+  isItem: 0
+  healthRestoreAmount: 25
