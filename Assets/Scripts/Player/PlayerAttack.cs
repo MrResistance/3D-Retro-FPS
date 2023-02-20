@@ -13,12 +13,30 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        inv = GetComponent<Inventory>();
+        inv = GameObject.Find("PlayerCapsule").GetComponent<Inventory>();
         objPooler = GameObject.FindObjectOfType<ObjectPooler>();
     }
     public void ShootProjectile()
     {
-        objPooler.SpawnFromPool("Player Projectile", firePos.transform.position, Quaternion.identity);
+        switch (inv.currentWeapon)
+        {
+            case Inventory.Weapon.unarmed:
+                break;
+            case Inventory.Weapon.knife:
+                break;
+            case Inventory.Weapon.pistol:
+                objPooler.SpawnFromPool("Pistol Projectile", firePos.transform.position, Quaternion.identity);
+                break;
+            case Inventory.Weapon.shotgun:
+                objPooler.SpawnFromPool("Shotgun Projectile", firePos.transform.position, Quaternion.identity);
+                break;
+            case Inventory.Weapon.minigun:
+                break;
+            case Inventory.Weapon.cannon:
+                break;
+            default:
+                break;
+        }
     }
 
     public void MeleeAttack()
