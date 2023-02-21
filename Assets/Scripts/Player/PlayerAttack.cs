@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
         switch (inv.currentWeapon)
         {
             case Inventory.Weapon.pistol:
-                objPooler.SpawnFromPool("Pistol Projectile", firePos.transform.position, Quaternion.identity);
+                objPooler.SpawnFromPool("Player Pistol Projectile", firePos.transform.position, Quaternion.identity);
                 break;
             case Inventory.Weapon.shotgun:
                 int pelletCount = Random.Range(6,11);
@@ -29,13 +29,16 @@ public class PlayerAttack : MonoBehaviour
                 {
                     float randomX = Random.Range(-0.5f, 0.5f);
                     float randomY = Random.Range(-0.5f, 0.5f);
-                    objPooler.SpawnFromPool("Shotgun Projectile", new Vector3(firePos.transform.position.x + randomX, firePos.transform.position.y + randomY, firePos.transform.position.z), Quaternion.identity);
+                    objPooler.SpawnFromPool("Player Shotgun Projectile", new Vector3(firePos.transform.position.x + randomX, firePos.transform.position.y + randomY, firePos.transform.position.z), Quaternion.identity);
                 }
                 break;
             case Inventory.Weapon.minigun:
+                float randomMinigunX = Random.Range(-0.15f, 0.15f);
+                float randomMinigunY = Random.Range(-0.1f, 0.1f);
+                objPooler.SpawnFromPool("Player Minigun Projectile", new Vector3(firePos.transform.position.x + randomMinigunX, firePos.transform.position.y + randomMinigunY, firePos.transform.position.z + 0.5f), Quaternion.identity);
                 break;
             case Inventory.Weapon.cannon:
-                objPooler.SpawnFromPool("Rocket Projectile", firePos.transform.position, Quaternion.Euler(0, inv.transform.rotation.eulerAngles.y, 0));
+                objPooler.SpawnFromPool("Player Cannon Projectile", firePos.transform.position, Quaternion.Euler(0, inv.transform.rotation.eulerAngles.y, 0));
                 break;
             default:
                 break;
