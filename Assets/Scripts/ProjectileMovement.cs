@@ -53,8 +53,11 @@ public class ProjectileMovement : MonoBehaviour
         transform.position = new Vector3 (0, 0, 0);
         transform.GetChild(0).transform.position = Vector3.zero;
         transform.GetChild(0).transform.rotation = quaternion.identity;
-        GetComponentInChildren<BillboardAnimation>().direction = Vector3.zero;
-        GetComponentInChildren<BillboardAnimation>().rotation = quaternion.identity;
+        if (!gameObject.name.Contains("Cannon"))
+        { 
+            GetComponentInChildren<BillboardAnimation>().direction = Vector3.zero;
+            GetComponentInChildren<BillboardAnimation>().rotation = quaternion.identity;
+        }
         this.gameObject.SetActive(false);
     }
 }

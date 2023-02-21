@@ -12,7 +12,8 @@ public class MobBillboardAnimation : MonoBehaviour
     private SpriteRenderer sr;
     public Camera MainCamera;
     public int directions = 8;
-    float minMirrorAngle = 0, maxMirrorAngle = 0;
+    float minMirrorAngle = 0;
+    float maxMirrorAngle = 0;
     // Angular speed in radians per sec.
     public float speed = 1.0f;
     private void Awake()
@@ -34,7 +35,6 @@ public class MobBillboardAnimation : MonoBehaviour
         minMirrorAngle = (360 / directions) / 2;
         maxMirrorAngle = 180 - minMirrorAngle;
     }
-
     // Update is called once per frame
     void Update()
     {
