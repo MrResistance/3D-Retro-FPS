@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,10 +14,12 @@ public class Inventory : MonoBehaviour
     public float weaponSwapSpeed = 0.5F;
     private float nextSwap = 0.0F;
     private PlayerAttack playerAttack;
+    private PlayerInput playerInput;
     // Start is called before the first frame update
     private void Awake()
     {
         playerAttack = GetComponent<PlayerAttack>();
+        playerInput = GetComponent<PlayerInput>();
     }
     void Start()
     {
@@ -64,6 +67,20 @@ public class Inventory : MonoBehaviour
         if (currentWeapon != Weapon.unarmed)
         {
             animator.SetTrigger("Attack");
+        }
+    }
+    public void OnShootHold()
+    {
+        if (currentWeapon == Weapon.minigun)
+        {
+            animator.SetBool("IsMinigun", true);
+        }
+    }
+    public void OnStopShooting()
+    {
+        if (currentWeapon == Weapon.minigun)
+        {
+            animator.SetBool("IsMinigun", false);
         }
     }
     public void OnSwitchWeapon()
