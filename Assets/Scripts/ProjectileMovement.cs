@@ -26,11 +26,20 @@ public class ProjectileMovement : MonoBehaviour
         {
             aS.PlayOneShot(fireSound);
             Vector3 direction = Camera.main.transform.forward;
-            if (gameObject.name.Contains("Minigun") || gameObject.name.Contains("Shotgun"))
+            if (gameObject.name.Contains("Minigun"))
             {
                 float angleX = Random.Range(-2f, 2f);
-                float angleY = Random.Range(-2f, 2f); 
-                Quaternion rotation = Quaternion.Euler(angleX, angleY, 0f);
+                float angleY = Random.Range(-2f, 2f);
+                float angleZ = Random.Range(-2f, 2f);
+                Quaternion rotation = Quaternion.Euler(angleX, angleY, angleZ);
+                direction = rotation * direction;
+            }
+            else if (gameObject.name.Contains("Shotgun"))
+            {
+                float angleX = Random.Range(-5f, 5f);
+                float angleY = Random.Range(-5f, 5f);
+                float angleZ = Random.Range(-5f, 5f);
+                Quaternion rotation = Quaternion.Euler(angleX, angleY, angleZ);
                 direction = rotation * direction;
             }
             rb.velocity = direction.normalized * speed;

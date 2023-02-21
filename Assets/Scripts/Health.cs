@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
             anim.Play("HitFront");
             if (health <= 0)
             {
-                anim.Play("Death");
+                anim.SetTrigger("Death");
                 sfxManager.PlayDeathSound();
                 Invoke(nameof(DestroyEntity), 0.3f);
             }

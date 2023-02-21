@@ -16,7 +16,10 @@ public class BillboardAnimation : MonoBehaviour
     void Update()
     {
         direction = target.position - transform.position;
-        direction.y = 0;
+        if (!transform.parent.tag.Equals("Player Projectile"))
+        {
+            direction.y = 0;
+        }
         rotation = Quaternion.LookRotation(direction);
         gameObject.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
     }
