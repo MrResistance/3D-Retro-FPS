@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
-//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ProjectileMovement : MonoBehaviour
@@ -28,6 +26,13 @@ public class ProjectileMovement : MonoBehaviour
         {
             aS.PlayOneShot(fireSound);
             Vector3 direction = Camera.main.transform.forward;
+            if (gameObject.name.Contains("Minigun") || gameObject.name.Contains("Shotgun"))
+            {
+                float angleX = Random.Range(-2f, 2f);
+                float angleY = Random.Range(-2f, 2f); 
+                Quaternion rotation = Quaternion.Euler(angleX, angleY, 0f);
+                direction = rotation * direction;
+            }
             rb.velocity = direction.normalized * speed;
         }
     }
@@ -53,11 +58,11 @@ public class ProjectileMovement : MonoBehaviour
         rb.isKinematic = false;
         transform.position = new Vector3 (0, 0, 0);
         transform.GetChild(0).transform.position = Vector3.zero;
-        transform.GetChild(0).transform.rotation = quaternion.identity;
+        transform.GetChild(0).transform.rotation = Quaternion.identity;
         if (!gameObject.name.Contains("Cannon"))
         { 
             GetComponentInChildren<BillboardAnimation>().direction = Vector3.zero;
-            GetComponentInChildren<BillboardAnimation>().rotation = quaternion.identity;
+            GetComponentInChildren<BillboardAnimation>().rotation = Quaternion.identity;
         }
         this.gameObject.SetActive(false);
     }

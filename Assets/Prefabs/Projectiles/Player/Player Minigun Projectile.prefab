@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 33114443313270243, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
       propertyPath: speed
-      value: 100
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3709489187042908511, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
       propertyPath: m_Name
@@ -38,6 +38,10 @@ PrefabInstance:
     - target: {fileID: 6062305022496999732, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
       propertyPath: m_Radius
       value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791783320437208274, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960970697459533767, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
       propertyPath: m_RootOrder
