@@ -7,13 +7,12 @@ public class MobBillboardAnimation : MonoBehaviour
     // The target marker.
     public Transform target;
     public Vector3 targetDirection;
+    public Animator anim;
     public bool MirrorLeft = true;
-    private Animator anim;
     private SpriteRenderer sr;
     public Camera MainCamera;
     public int directions = 8;
-    float minMirrorAngle = 0;
-    float maxMirrorAngle = 0;
+    float minMirrorAngle = 0, maxMirrorAngle = 0;
     // Angular speed in radians per sec.
     public float speed = 1.0f;
     private void Awake()
@@ -41,7 +40,7 @@ public class MobBillboardAnimation : MonoBehaviour
     {
         Vector3 viewDirection = -new Vector3(MainCamera.transform.forward.x, 0, MainCamera.transform.forward.z);
         transform.LookAt(transform.position + viewDirection);
-        if (this.gameObject.tag == "Enemy")
+        if (this.gameObject.tag == "Enemy" || transform.parent.name.Contains("Cannon"))
         {
             anim.SetFloat("ViewAngle", transform.localEulerAngles.y);
         }

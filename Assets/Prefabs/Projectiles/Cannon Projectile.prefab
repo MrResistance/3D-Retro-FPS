@@ -19,6 +19,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2497908445288153588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3278061950564855076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a8e4c14fbb3014aaba8ea00c5e4009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetDirection: {x: 0, y: 0, z: 0}
+  anim: {fileID: 0}
+  MirrorLeft: 1
+  MainCamera: {fileID: 0}
+  directions: 4
+  speed: 1
 --- !u!1001 &4610957442346009751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26,6 +45,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 33114443313270243, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3709489187042908511, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
       propertyPath: m_Name
       value: Cannon Projectile
@@ -34,6 +57,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4134033845311223909, guid: 0a1f8a58f7e55e644a4637f838e4a5bf, type: 3}
+    - target: {fileID: 3918971599356060950, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918971599356060950, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918971599356060950, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6960970697459533767, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
       propertyPath: m_RootOrder
       value: 0
