@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MobBillboardAnimation : MonoBehaviour
 {
-    // The target marker.
-    public Transform target;
     public Vector3 targetDirection;
     public Animator anim;
     public bool MirrorLeft = true;
@@ -14,7 +12,6 @@ public class MobBillboardAnimation : MonoBehaviour
     public int directions = 8;
     float minMirrorAngle = 0;
     float maxMirrorAngle = 0;
-    // Angular speed in radians per sec.
     public float speed = 1.0f;
     private void Awake()
     {
@@ -22,7 +19,6 @@ public class MobBillboardAnimation : MonoBehaviour
         {
             MainCamera = Camera.main;
         }
-        target = GameObject.Find("PlayerCapsule").transform;
     }
     void Start()
     {
