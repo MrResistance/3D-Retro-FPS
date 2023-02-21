@@ -20,10 +20,6 @@ public class PlayerAttack : MonoBehaviour
     {
         switch (inv.currentWeapon)
         {
-            case Inventory.Weapon.unarmed:
-                break;
-            case Inventory.Weapon.knife:
-                break;
             case Inventory.Weapon.pistol:
                 objPooler.SpawnFromPool("Pistol Projectile", firePos.transform.position, Quaternion.identity);
                 break;
@@ -34,7 +30,6 @@ public class PlayerAttack : MonoBehaviour
                     float randomX = Random.Range(-0.5f, 0.5f);
                     float randomY = Random.Range(-0.5f, 0.5f);
                     objPooler.SpawnFromPool("Shotgun Projectile", new Vector3(firePos.transform.position.x + randomX, firePos.transform.position.y + randomY, firePos.transform.position.z), Quaternion.identity);
-
                 }
                 break;
             case Inventory.Weapon.minigun:

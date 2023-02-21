@@ -50,6 +50,7 @@ public class ProjectileMovement : MonoBehaviour
     public void DisableProjectile()
     {
         rb.velocity = Vector3.zero;
+        rb.isKinematic = false;
         transform.position = new Vector3 (0, 0, 0);
         transform.GetChild(0).transform.position = Vector3.zero;
         transform.GetChild(0).transform.rotation = quaternion.identity;

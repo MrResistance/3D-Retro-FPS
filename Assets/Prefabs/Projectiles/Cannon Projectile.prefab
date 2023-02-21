@@ -47,7 +47,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 33114443313270243, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
       propertyPath: speed
-      value: 20
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334027170634148275, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+      propertyPath: m_TagString
+      value: Player Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 3709489187042908511, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
       propertyPath: m_Name
@@ -68,6 +72,22 @@ PrefabInstance:
     - target: {fileID: 3918971599356060950, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592696413593761868, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+      propertyPath: pm
+      value: 
+      objectReference: {fileID: 4578133545199143284}
+    - target: {fileID: 5592696413593761868, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592696413593761868, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+      propertyPath: radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592696413593761868, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 6791783320437208274, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
       propertyPath: m_Enabled
@@ -117,6 +137,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7893349377391719696, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8525370912021370673, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -128,6 +152,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6791783320437208274, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+--- !u!114 &4578133545199143284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 33114443313270243, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
+  m_PrefabInstance: {fileID: 4610957442346009751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fcaa7be6199b584882b612e9412ee6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3278061950564855076 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1334027170634148275, guid: 528afc8138fa1f440aee4fd1c03f9a5a, type: 3}
