@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour
     private float nextSwap = 0.0F;
     private PlayerAttack playerAttack;
     private PlayerInput playerInput;
+    public List<GameObject> weaponIndicatorSprites;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -35,6 +36,7 @@ public class Inventory : MonoBehaviour
     }
     public void WeaponAnimationUpdate()
     {
+        ResetWeaponIndicatorSprites();
         switch (((int)currentWeapon))
         {
             case 0:
@@ -43,23 +45,35 @@ public class Inventory : MonoBehaviour
             case 1:
                 animator.runtimeAnimatorController = knifeAnim;
                 animator.SetTrigger("Ready");
+                weaponIndicatorSprites[0].SetActive(true);
                 break;
             case 2:
                 animator.runtimeAnimatorController = pistolAnim;
                 animator.SetTrigger("Ready");
+                weaponIndicatorSprites[1].SetActive(true);
                 break;
             case 3:
                 animator.runtimeAnimatorController = shotgunAnim;
                 animator.SetTrigger("Ready");
+                weaponIndicatorSprites[2].SetActive(true);
                 break;
             case 4:
                 animator.runtimeAnimatorController = minigunAnim;
                 animator.SetTrigger("Ready");
+                weaponIndicatorSprites[3].SetActive(true);
                 break;
             case 5:
                 animator.runtimeAnimatorController = cannonAnim;
                 animator.SetTrigger("Ready");
+                weaponIndicatorSprites[4].SetActive(true);
                 break;
+        }
+    }
+    public void ResetWeaponIndicatorSprites()
+    {
+        foreach (GameObject sprite in weaponIndicatorSprites)
+        {
+            sprite.SetActive(false);
         }
     }
     public void OnShoot()
