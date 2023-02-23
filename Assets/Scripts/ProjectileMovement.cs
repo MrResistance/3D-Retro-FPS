@@ -16,7 +16,16 @@ public class ProjectileMovement : MonoBehaviour
     {
         if (this.gameObject.tag.Contains("Enemy"))
         {
-            rb.velocity = -(transform.position - tempTarget.transform.position) * speed;
+            Vector3 direction = -(transform.position - tempTarget.transform.position);
+            if (gameObject.name.Contains("Shotgun"))
+            {
+                float angleX = Random.Range(-5f, 5f);
+                float angleY = Random.Range(-5f, 5f);
+                float angleZ = Random.Range(-5f, 5f);
+                Quaternion rotation = Quaternion.Euler(angleX, angleY, angleZ);
+                direction = rotation * direction;
+            }
+            rb.velocity = direction.normalized * speed;
         }
     }
     private void OnEnable()

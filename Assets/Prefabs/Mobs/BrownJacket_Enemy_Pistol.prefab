@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8940275637129565220}
   - component: {fileID: 529800872512451616}
   m_Layer: 9
-  m_Name: BrownJacket_Enemy
+  m_Name: BrownJacket_Enemy_Pistol
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

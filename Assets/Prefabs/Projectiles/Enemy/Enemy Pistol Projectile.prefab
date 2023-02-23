@@ -148,6 +148,9 @@ MonoBehaviour:
   pm: {fileID: 0}
   damage: 5
   radius: 20
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -258,7 +261,7 @@ GameObject:
   - component: {fileID: 8252770600980278959}
   - component: {fileID: 1326393361679164555}
   m_Layer: 6
-  m_Name: Enemy Projectile
+  m_Name: Enemy Pistol Projectile
   m_TagString: Enemy Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,6 +300,6 @@ MonoBehaviour:
   rb: {fileID: 9193854157301619832}
   objPooler: {fileID: 0}
   MainCamera: {fileID: 0}
-  speed: 2
+  speed: 20
   fireSound: {fileID: 8300000, guid: 2a59e4b5d5223f041926e188dc564c4a, type: 3}
   contactSound: {fileID: 0}

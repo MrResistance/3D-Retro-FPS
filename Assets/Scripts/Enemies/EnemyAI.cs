@@ -99,7 +99,6 @@ public class EnemyAI : MonoBehaviour
             anim.SetTrigger("Shoot");
             ///Attack code here
             
-            //rb.AddForce(transform.up * 8f, ForceMode.Impulse);
             ///End of attack code
 
             alreadyAttacked = true;
@@ -111,7 +110,23 @@ public class EnemyAI : MonoBehaviour
     {
         //thisY = transform.localToWorldMatrix;
         sfxManager.PlayFireWeaponSound();
-        objPooler.SpawnFromPool("Enemy Projectile", new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+        switch (gameObject.name)
+        {
+            case string s when s.Contains("Pistol"):
+                objPooler.SpawnFromPool("Enemy Pistol Projectile", new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+                break;
+            case string s when s.Contains("Shotgun"):
+                int pelletCount = Random.Range(6, 11);
+                for (int i = 0; i < pelletCount; i++)
+                {
+                    objPooler.SpawnFromPool("Enemy Shotgun Projectile", new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+                }
+                break;
+            case string s when s.Contains("Minigun"):
+                break;
+            case string s when s.Contains("Rocket"):
+                break;
+        }
         //Rigidbody rb = Instantiate(projectile, new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity).GetComponent<Rigidbody>();
         //rb.AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
     }
