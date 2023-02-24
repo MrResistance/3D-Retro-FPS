@@ -11,23 +11,6 @@ public class ProjectileMovement : MonoBehaviour
     public float speed = 1f;
     private AudioSource aS;
     public AudioClip fireSound, contactSound;
-
-    private void FixedUpdate()
-    {
-        if (this.gameObject.tag.Contains("Enemy"))
-        {
-            Vector3 direction = -(transform.position - tempTarget.transform.position);
-            if (gameObject.name.Contains("Shotgun"))
-            {
-                float angleX = Random.Range(-5f, 5f);
-                float angleY = Random.Range(-5f, 5f);
-                float angleZ = Random.Range(-5f, 5f);
-                Quaternion rotation = Quaternion.Euler(angleX, angleY, angleZ);
-                direction = rotation * direction;
-            }
-            rb.velocity = direction.normalized * speed;
-        }
-    }
     private void OnEnable()
     {
         if (target != null) tempTarget = target.transform;
@@ -44,6 +27,19 @@ public class ProjectileMovement : MonoBehaviour
                 direction = rotation * direction;
             }
             else if (gameObject.name.Contains("Shotgun"))
+            {
+                float angleX = Random.Range(-5f, 5f);
+                float angleY = Random.Range(-5f, 5f);
+                float angleZ = Random.Range(-5f, 5f);
+                Quaternion rotation = Quaternion.Euler(angleX, angleY, angleZ);
+                direction = rotation * direction;
+            }
+            rb.velocity = direction.normalized * speed;
+        }
+        else if (this.gameObject.tag.Contains("Enemy"))
+        {
+            Vector3 direction = -(transform.position - tempTarget.transform.position);
+            if (gameObject.name.Contains("Shotgun"))
             {
                 float angleX = Random.Range(-5f, 5f);
                 float angleY = Random.Range(-5f, 5f);
