@@ -22,11 +22,29 @@ public class DJ : MonoBehaviour
             Destroy(this.gameObject);
         }
         DJ Instance = DJ.instance;
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     void Start()
     {
         aS = GetComponent<AudioSource>();
-        PlayMenuMusic();
+        switch (gm.currentState)
+        {
+            case GameManager.gameState.menu:
+                PlayMenuMusic();
+                break;
+            case GameManager.gameState.game:
+                PlayGameMusic();
+                break;
+            case GameManager.gameState.paused:
+                break;
+            case GameManager.gameState.gameOver:
+                StopPlayingMusic();
+                PlayLossSound();
+                break;
+            default:
+                break;
+        }
+
     }
     public void PlayWinSound()
     {
