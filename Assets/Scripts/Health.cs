@@ -10,7 +10,6 @@ public class Health : MonoBehaviour
     private GameManager gameManager;
     private void Awake()
     {
-        anim = GetComponentInChildren<Animator>();
         sfxManager= GetComponent<SFX_Manager>();
         if (this.gameObject.tag.Contains("Player"))
         {
@@ -19,6 +18,10 @@ public class Health : MonoBehaviour
             faceUIanim = GameObject.Find("Face").GetComponent<Animator>();
             faceUIanim.SetFloat("PlayerHealth", health);
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        }
+        else if (this.gameObject.tag.Contains("Enemy"))
+        {
+            anim = GetComponentInChildren<Animator>();
         }
     }
     public void TakeDamage(float damage)

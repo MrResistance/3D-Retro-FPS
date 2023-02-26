@@ -17,7 +17,7 @@ public class ProjectileCollision : MonoBehaviour
         //RPG projectile contact is different to the others, it requires an explosion so we:
         //Play the explosion animation, stop the projectile from moving,
         //scale up the explosion effect, calculate AOE (Area of effect) damage
-        if (transform.parent.name.Contains("Cannon"))
+        if (transform.parent.name.Contains("RPG"))
         {
             GetComponent<Animator>().Play("rocketExplode");
             GetComponent<Rigidbody>().velocity = Vector3.zero;

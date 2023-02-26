@@ -10,17 +10,36 @@ public class Inventory : MonoBehaviour
     public List<Weapon> availableWeapons;
     public Animator animator;
     public RuntimeAnimatorController knifeAnim;
-    public AnimatorOverrideController pistolAnim, shotgunAnim, minigunAnim, cannonAnim;
+    public AnimatorOverrideController pistolAnim, shotgunAnim, minigunAnim, rpgAnim;
     public float weaponSwapSpeed = 0.5F;
     private float nextSwap = 0.0F;
-    private PlayerAttack playerAttack;
-    private PlayerInput playerInput;
     public List<GameObject> weaponIndicatorSprites;
     // Start is called before the first frame update
     private void Awake()
     {
-        playerAttack = GetComponent<PlayerAttack>();
-        playerInput = GetComponent<PlayerInput>();
+        animator = GameObject.Find("Weapon").GetComponent<Animator>();
+        for (int i = 0; i < 5; i++)
+        {
+            switch (i)
+            {
+                case 0:
+                    weaponIndicatorSprites[0] = GameObject.Find("Indicator_Weapon_Knife");
+                    break;
+                case 1:
+                    weaponIndicatorSprites[1] = GameObject.Find("Indicator_Weapon_Pistol");
+                    break;
+                case 2:
+                    weaponIndicatorSprites[2] = GameObject.Find("Indicator_Weapon_Shotgun");
+                    break;
+                case 3:
+                    weaponIndicatorSprites[3] = GameObject.Find("Indicator_Weapon_Minigun");
+                    break;
+                case 4:
+                    weaponIndicatorSprites[4] = GameObject.Find("Indicator_Weapon_RPG");
+                    break;
+
+            }
+        }
     }
     void Start()
     {
@@ -63,7 +82,7 @@ public class Inventory : MonoBehaviour
                 weaponIndicatorSprites[3].SetActive(true);
                 break;
             case 5:
-                animator.runtimeAnimatorController = cannonAnim;
+                animator.runtimeAnimatorController = rpgAnim;
                 animator.SetTrigger("Ready");
                 weaponIndicatorSprites[4].SetActive(true);
                 break;
@@ -144,6 +163,6 @@ public class Inventory : MonoBehaviour
         pistol,
         shotgun,
         minigun,
-        cannon
+        RPG
     }
 }

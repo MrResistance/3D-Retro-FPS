@@ -13,11 +13,19 @@ public class ObjectPooler : MonoBehaviour
         public Transform parent;
     }
     #region Singleton
-    public static ObjectPooler Instance;
+    public static ObjectPooler instance;
 
     private void Awake()
     {
-        Instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
     #endregion
 
@@ -44,7 +52,7 @@ public class ObjectPooler : MonoBehaviour
     {
         if (!poolDictionary.ContainsKey(tag))
         {
-            Debug.LogWarning("Pool with tag " + tag + "doesn't exist.");
+            Debug.LogWarning("Pool with tag " + tag + "doesn't exist. ");
             return null;
         }
 

@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private Inventory inv;
-    private ObjectPooler objPooler;
+    public Inventory inv;
+    public ObjectPooler objPooler;
     public Transform firePos;
     public SphereCollider meleeRange;
     public LayerMask enemyLayer;
     public float meleeAttackRadius = 1f, meleeAttackDamage = 10f;
-
-    private void Awake()
+    private void Start()
     {
-        inv = GameObject.Find("PlayerCapsule").GetComponent<Inventory>();
+        inv = GameObject.FindObjectOfType<Inventory>();
         objPooler = GameObject.FindObjectOfType<ObjectPooler>();
+        firePos = GameObject.FindObjectOfType<SphereCollider>().transform;
+        meleeRange = firePos.gameObject.GetComponent<SphereCollider>();
     }
     public void ShootProjectile()
     {
         switch (inv.currentWeapon)
         {
             case Inventory.Weapon.pistol:
+                Debug.Log("shoot pistol");
                 objPooler.SpawnFromPool("Player Pistol Projectile", firePos.transform.position, Quaternion.identity);
                 break;
             case Inventory.Weapon.shotgun:
@@ -33,8 +35,8 @@ public class PlayerAttack : MonoBehaviour
             case Inventory.Weapon.minigun:
                 objPooler.SpawnFromPool("Player Minigun Projectile", firePos.transform.position, Quaternion.identity);
                 break;
-            case Inventory.Weapon.cannon:
-                objPooler.SpawnFromPool("Player Cannon Projectile", firePos.transform.position, Quaternion.Euler(0, inv.transform.rotation.eulerAngles.y, 0));
+            case Inventory.Weapon.RPG:
+                objPooler.SpawnFromPool("Player RPG Projectile", firePos.transform.position, Quaternion.Euler(0, inv.transform.rotation.eulerAngles.y, 0));
                 break;
             default:
                 break;

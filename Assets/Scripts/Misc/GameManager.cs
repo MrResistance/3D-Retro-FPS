@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public gameState currentState;
     private UI_Manager uiManager;
     private DJ dj;
+    private Inventory inv;
     public static GameManager instance;
 
     private void Awake()
@@ -23,7 +24,8 @@ public class GameManager : MonoBehaviour
         GameManager Instance = GameManager.instance;
         uiManager = GameObject.Find("UI_Manager").GetComponent<UI_Manager>();
         dj = GameObject.Find("DJ").GetComponent<DJ>();
-        Cursor.lockState = CursorLockMode.Confined;
+        inv = GameObject.FindObjectOfType<Inventory>();
+        //Cursor.lockState = CursorLockMode.Confined;
     }
     public void pauseGame()
     {
@@ -45,6 +47,8 @@ public class GameManager : MonoBehaviour
         currentState = gameState.game;
         uiManager.LoadGameScene();
         dj.PlayGameMusic();
+        inv.ResetWeaponIndicatorSprites();
+        inv.WeaponAnimationUpdate();
         Time.timeScale = 1;
     }
     public void gameOver()
