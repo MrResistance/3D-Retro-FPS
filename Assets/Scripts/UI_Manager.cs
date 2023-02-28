@@ -20,10 +20,6 @@ public class UI_Manager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
-    public void button()
-    {
-        Debug.Log("BUTTON");
-    }
     public void ShowGameOverUI()
     { 
         gameOverUI.SetActive(true);
