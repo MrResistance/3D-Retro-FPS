@@ -12,22 +12,6 @@ public class ObjectPooler : MonoBehaviour
         public int size;
         public Transform parent;
     }
-    #region Singleton
-    public static ObjectPooler instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-    #endregion
 
     public List<Pool> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;

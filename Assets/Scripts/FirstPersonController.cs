@@ -68,6 +68,7 @@ namespace StarterAssets
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
+		private GameManager gm;
 
 		private const float _threshold = 0.01f;
 		
@@ -80,6 +81,7 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
+			gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		}
 
 		private void Start()
@@ -95,7 +97,7 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			if (GameManager.instance.currentState == GameManager.gameState.game)
+			if (gm.currentState == GameManager.gameState.game)
 			{
 				JumpAndGravity();
 				GroundedCheck();
@@ -105,7 +107,7 @@ namespace StarterAssets
 
 		private void LateUpdate()
 		{
-			if (GameManager.instance.currentState == GameManager.gameState.game)
+			if (gm.currentState == GameManager.gameState.game)
 			{
                 CameraRotation();
             }

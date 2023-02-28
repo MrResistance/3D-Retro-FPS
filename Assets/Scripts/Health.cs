@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
     public float health = 100f;
-    private Animator anim, healthUIanim, faceUIanim;
+    public Animator anim, health_UI_anim, face_UI_anim;
     private SFX_Manager sfxManager;
     private GameManager gameManager;
     private void Awake()
@@ -13,10 +15,10 @@ public class Health : MonoBehaviour
         sfxManager= GetComponent<SFX_Manager>();
         if (this.gameObject.tag.Contains("Player"))
         {
-            healthUIanim = GameObject.Find("HealthUI").GetComponent<Animator>();
-            healthUIanim.SetFloat("PlayerHealth", health);
-            faceUIanim = GameObject.Find("Face").GetComponent<Animator>();
-            faceUIanim.SetFloat("PlayerHealth", health);
+            health_UI_anim = GameObject.Find("HealthUI").GetComponent<Animator>();
+            health_UI_anim.SetFloat("PlayerHealth", health);
+            face_UI_anim = GameObject.Find("Face").GetComponent<Animator>();
+            face_UI_anim.SetFloat("PlayerHealth", health);
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
         else if (this.gameObject.tag.Contains("Enemy"))
@@ -40,8 +42,8 @@ public class Health : MonoBehaviour
         }
         if (this.gameObject.tag.Contains("Player"))
         {
-            healthUIanim.SetFloat("PlayerHealth", health);
-            faceUIanim.SetFloat("PlayerHealth", health);
+            health_UI_anim.SetFloat("PlayerHealth", health);
+            face_UI_anim.SetFloat("PlayerHealth", health);
             if (health <= 0)
             {
                 gameManager.gameOver();

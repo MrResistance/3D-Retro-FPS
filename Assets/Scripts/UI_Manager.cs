@@ -5,25 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
-    public static UI_Manager instance;
-    private GameObject gameUI;
+    private GameObject gameUI, gameOverUI;
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-        UI_Manager Instance = UI_Manager.instance;
         gameUI = GameObject.Find("Canvases");
+        gameOverUI = transform.GetChild(0).transform.GetChild(0).gameObject;
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             HideGameUI();
         }
+    }
+    public void ShowGameOverUI()
+    { 
+        gameOverUI.SetActive(true);
+    }
+    public void HideGameOverUI()
+    {
+        gameOverUI.SetActive(false);
     }
     public void ShowGameUI()
     {

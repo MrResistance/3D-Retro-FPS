@@ -8,20 +8,9 @@ public class GameManager : MonoBehaviour
     private UI_Manager uiManager;
     private DJ dj;
     private Inventory inv;
-    public static GameManager instance;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-        GameManager Instance = GameManager.instance;
         uiManager = GameObject.Find("UI_Manager").GetComponent<UI_Manager>();
         dj = GameObject.Find("DJ").GetComponent<DJ>();
         inv = GameObject.FindObjectOfType<Inventory>();
@@ -49,6 +38,7 @@ public class GameManager : MonoBehaviour
         dj.PlayGameMusic();
         inv.ResetWeaponIndicatorSprites();
         inv.WeaponAnimationUpdate();
+        uiManager.HideGameOverUI();
         Time.timeScale = 1;
     }
     public void gameOver()
@@ -57,6 +47,7 @@ public class GameManager : MonoBehaviour
         currentState = gameState.gameOver;
         dj.StopPlayingMusic();
         dj.PlayLossSound();
+        uiManager.ShowGameOverUI();
         Time.timeScale = 0;
     }
     public enum gameState
