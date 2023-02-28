@@ -22,7 +22,6 @@ public class PlayerAttack : MonoBehaviour
         switch (inv.currentWeapon)
         {
             case Inventory.Weapon.pistol:
-                Debug.Log("shoot pistol");
                 objPooler.SpawnFromPool("Player Pistol Projectile", firePos.transform.position, Quaternion.identity);
                 break;
             case Inventory.Weapon.shotgun:

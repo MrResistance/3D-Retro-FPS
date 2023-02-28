@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         dj.StopPlayingMusic();
         dj.PlayLossSound();
         uiManager.ShowGameOverUI();
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
     public enum gameState
     {
