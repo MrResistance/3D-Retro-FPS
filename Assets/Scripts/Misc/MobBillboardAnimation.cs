@@ -13,6 +13,7 @@ public class MobBillboardAnimation : MonoBehaviour
     float minMirrorAngle = 0;
     float maxMirrorAngle = 0;
     public float speed = 1.0f;
+    private EnemyAI enemyAI;
     private void Awake()
     {
         if (MainCamera == null)

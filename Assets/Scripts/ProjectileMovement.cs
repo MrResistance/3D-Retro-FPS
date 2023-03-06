@@ -47,6 +47,14 @@ public class ProjectileMovement : MonoBehaviour
                 Quaternion rotation = Quaternion.Euler(angleX, angleY, angleZ);
                 direction = rotation * direction;
             }
+            else if (gameObject.name.Contains("Minigun"))
+            {
+                float angleX = Random.Range(-2f, 2f);
+                float angleY = Random.Range(-2f, 2f);
+                float angleZ = Random.Range(-2f, 2f);
+                Quaternion rotation = Quaternion.Euler(angleX, angleY, angleZ);
+                direction = rotation * direction;
+            }
             rb.velocity = direction.normalized * speed;
         }
     }

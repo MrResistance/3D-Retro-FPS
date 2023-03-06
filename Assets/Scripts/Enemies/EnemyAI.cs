@@ -33,6 +33,12 @@ public class EnemyAI : MonoBehaviour
     private Health health;
     private SFX_Manager sfxManager;
 
+    [SerializeField]
+    private Transform firePosA;
+    [SerializeField]
+    private Transform firePosB;
+
+    private SpriteRenderer sr;
     private void Awake()
     {
         health = GetComponent<Health>();
@@ -43,8 +49,8 @@ public class EnemyAI : MonoBehaviour
         mobBillboardAnimation = GetComponentInChildren<MobBillboardAnimation>();
         objPooler = GameObject.FindObjectOfType<ObjectPooler>();
         sfxManager = GetComponent<SFX_Manager>();
+        sr = GetComponentInChildren<SpriteRenderer>();
     }
-
     private void Update()
     {
         //Check for sight and attack range
@@ -123,6 +129,15 @@ public class EnemyAI : MonoBehaviour
                 }
                 break;
             case string s when s.Contains("Minigun"):
+                if (!sr.flipX)
+                {
+                    objPooler.SpawnFromPool("Enemy Minigun Projectile", firePosA.transform.position, Quaternion.identity);
+                }
+                if (sr.flipX)
+                {
+                    objPooler.SpawnFromPool("Enemy Minigun Projectile", firePosB.transform.position, Quaternion.identity);
+                }
+                
                 break;
             case string s when s.Contains("Rocket"):
                 break;
