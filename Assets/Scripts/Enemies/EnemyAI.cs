@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     public float walkPointRange;
 
     //Attacking
-    public float timeBetweenAttacks;
+    public float attackSpeed;
     bool alreadyAttacked;
     public GameObject projectile;
     public float projectileSpeed;
@@ -45,7 +45,7 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.Find("PlayerCapsule").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
-        anim.SetFloat("attackSpeed", timeBetweenAttacks);
+        anim.SetFloat("attackSpeed", attackSpeed);
         mobBillboardAnimation = GetComponentInChildren<MobBillboardAnimation>();
         objPooler = GameObject.FindObjectOfType<ObjectPooler>();
         sfxManager = GetComponent<SFX_Manager>();
@@ -108,7 +108,7 @@ public class EnemyAI : MonoBehaviour
             ///End of attack code
 
             alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            Invoke(nameof(ResetAttack), attackSpeed);
         }
     }
 
