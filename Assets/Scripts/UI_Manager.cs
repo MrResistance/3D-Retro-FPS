@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
-    public GameObject gameUI, gameOverUI;
+    public GameObject gameUI, gameOverUI, continueButton, retryButton;
     void Awake()
     {
         gameUI = GameObject.Find("Canvases");
@@ -20,9 +20,21 @@ public class UI_Manager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
+    public void ShowPauseMenu()
+    {
+        ShowGameOverUI();
+        continueButton.SetActive(true);
+        retryButton.SetActive(false);
+    }
+    public void HidePauseMenu()
+    {
+        HideGameOverUI();
+    }
     public void ShowGameOverUI()
     { 
         gameOverUI.SetActive(true);
+        continueButton.SetActive(false);
+        retryButton.SetActive(true);
     }
     public void HideGameOverUI()
     {

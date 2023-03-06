@@ -21,6 +21,16 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         currentState = gameState.paused;
         Time.timeScale = 0;
+        uiManager.ShowPauseMenu();
+    }    
+    public void unpauseGame()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        currentState = gameState.game;
+        Time.timeScale = 1;
+        inv.ResetWeaponIndicatorSprites();
+        inv.WeaponAnimationUpdate();
+        uiManager.HidePauseMenu();
     }
 
     public void goToMainMenu()
