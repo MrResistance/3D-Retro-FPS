@@ -111,26 +111,39 @@ public class Inventory : MonoBehaviour
     }
     public void OnStopShooting()
     {
-        if (currentWeapon == Weapon.minigun)
-        {
-            animator.SetBool("IsMinigun", false);
-        }
+        animator.SetBool("IsMinigun", false);
     }
-    public void OnSwitchWeapon()
+    public void OnSwitchWeaponUp()
     {
+        OnStopShooting();
         if (Time.time > nextSwap && availableWeapons.Count > 0)
         {
             nextSwap = Time.time + weaponSwapSpeed;
             int currentIndex = availableWeapons.IndexOf(currentWeapon);
             int nextIndex = 0;
-            if (Mouse.current.scroll.ReadValue().normalized.y == 1)
+            nextIndex = (currentIndex + 1) % availableWeapons.Count;
+            // To ensure that the nextIndex field doesn't go outside the bounds of the array
+            if (nextIndex < 0)
             {
-                nextIndex = (currentIndex + 1) % availableWeapons.Count;
+                nextIndex = availableWeapons.Count - 1;
             }
-            else
+            if (nextIndex > availableWeapons.Count)
             {
-                nextIndex = (currentIndex - 1) % availableWeapons.Count;
+                nextIndex = 0;
             }
+            currentWeapon = availableWeapons[nextIndex];
+            WeaponAnimationUpdate();
+        }
+    }
+    public void OnSwitchWeaponDown()
+    {
+        OnStopShooting();
+        if (Time.time > nextSwap && availableWeapons.Count > 0)
+        {
+            nextSwap = Time.time + weaponSwapSpeed;
+            int currentIndex = availableWeapons.IndexOf(currentWeapon);
+            int nextIndex = 0;
+            nextIndex = (currentIndex - 1) % availableWeapons.Count;
             // To ensure that the nextIndex field doesn't go outside the bounds of the array
             if (nextIndex < 0)
             {
