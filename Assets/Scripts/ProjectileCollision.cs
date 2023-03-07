@@ -43,7 +43,7 @@ public class ProjectileCollision : MonoBehaviour
 
     private void AreaOfEffectAttack()
     {
-        //Check if there are enemies in the area, damage them if so
+        //Check if there are entities in the area, damage them if so
         if (gameObject.tag.Contains("Player"))
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, radius, enemyLayer);
