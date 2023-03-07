@@ -38,9 +38,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Switch Weapon",
+                    "name": "Switch Weapon Up",
                     "type": "Value",
                     "id": "37c1a07e-de82-499f-8db4-33be8f7c0c54",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Switch Weapon Down",
+                    "type": "Value",
+                    "id": "4af791e5-f0d3-4068-b799-090e8511b52e",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
@@ -262,7 +270,18 @@
                     "interactions": "",
                     "processors": "NormalizeVector2",
                     "groups": "KeyboardMouse",
-                    "action": "Switch Weapon",
+                    "action": "Switch Weapon Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "46f1d8f7-5424-4673-8baf-b44c3549dd0c",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Switch Weapon Up",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -273,6 +292,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b3d04d56-fdf4-4acd-ba5f-51abb04fff41",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -290,11 +320,33 @@
                 },
                 {
                     "name": "",
+                    "id": "b1647bfa-75e0-4676-b27b-fc97dd524e35",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Shoot Hold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4d2cc90e-8598-4767-a89b-79a1cf826dee",
                     "path": "<Mouse>/leftButton",
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "KeyboardMouse",
+                    "action": "Stop Shooting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5920fc8b-f5c9-4259-b97a-19915d336e1a",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Stop Shooting",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -307,6 +359,39 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64e024d2-8974-4a51-8e51-acf82b8977c4",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa4355fa-d7b3-4944-92c6-b5d129e8dea0",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "NormalizeVector2",
+                    "groups": "KeyboardMouse",
+                    "action": "Switch Weapon Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d4f46043-dff9-4e8e-8ae1-393da68f5234",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Switch Weapon Down",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
