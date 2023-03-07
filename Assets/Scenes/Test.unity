@@ -10397,6 +10397,10 @@ PrefabInstance:
       value: RedJacket_Enemy_RPG
       objectReference: {fileID: 0}
     - target: {fileID: 7360090515931184569, guid: 884d7d6d0e073dd428a69e90183e3bd9, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360090515931184569, guid: 884d7d6d0e073dd428a69e90183e3bd9, type: 3}
       propertyPath: attackSpeed
       value: 0.1
       objectReference: {fileID: 0}
