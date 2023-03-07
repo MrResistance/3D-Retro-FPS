@@ -37,7 +37,7 @@ public class MobBillboardAnimation : MonoBehaviour
     {
         Vector3 viewDirection = -new Vector3(MainCamera.transform.forward.x, 0, MainCamera.transform.forward.z);
         transform.LookAt(transform.position + viewDirection);
-        if (this.gameObject.tag == "Enemy" || transform.parent.name.Contains("Cannon"))
+        if (this.gameObject.tag == "Enemy" || transform.parent.name.Contains("RPG"))
         {
             anim.SetFloat("ViewAngle", transform.localEulerAngles.y);
         }

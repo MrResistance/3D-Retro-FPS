@@ -133,13 +133,24 @@ public class EnemyAI : MonoBehaviour
                 {
                     objPooler.SpawnFromPool("Enemy Minigun Projectile", firePosA.transform.position, Quaternion.identity);
                 }
-                if (sr.flipX)
+                else if (sr.flipX)
                 {
                     objPooler.SpawnFromPool("Enemy Minigun Projectile", firePosB.transform.position, Quaternion.identity);
                 }
                 
                 break;
-            case string s when s.Contains("Rocket"):
+            case string s when s.Contains("RPG"):
+                if (sr.flipX)
+                {
+                    objPooler.SpawnFromPool("Enemy RPG Projectile", new Vector3(firePosA.position.x, firePosA.position.y, firePosA.position.z + 1), Quaternion.identity);
+                    objPooler.SpawnFromPool("Enemy RPG Projectile", new Vector3(firePosB.position.x, firePosB.position.y, firePosB.position.z + 1), Quaternion.identity);
+                }
+                else if (!sr.flipX)
+                {
+                    objPooler.SpawnFromPool("Enemy RPG Projectile", new Vector3(firePosA.position.x, firePosA.position.y, firePosA.position.z - 1), Quaternion.identity);
+                    objPooler.SpawnFromPool("Enemy RPG Projectile", new Vector3(firePosB.position.x, firePosB.position.y, firePosB.position.z - 1), Quaternion.identity);
+                }
+                
                 break;
         }
         //Rigidbody rb = Instantiate(projectile, new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity).GetComponent<Rigidbody>();
