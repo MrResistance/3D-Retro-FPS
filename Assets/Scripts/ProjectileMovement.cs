@@ -13,7 +13,6 @@ public class ProjectileMovement : MonoBehaviour
     public AudioClip fireSound, contactSound;
     private void OnEnable()
     {
-        Invoke("DisableProjectile", 15f);
         if (target != null) tempTarget = target.transform;
         if (gameObject.tag.Contains("Player"))
         {
