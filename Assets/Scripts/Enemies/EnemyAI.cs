@@ -97,16 +97,9 @@ public class EnemyAI : MonoBehaviour
     {
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
-
-        //transform.LookAt(player);
-
         if (!alreadyAttacked)
         {
             anim.SetTrigger("Shoot");
-            ///Attack code here
-            
-            ///End of attack code
-
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), attackSpeed);
         }
@@ -114,7 +107,6 @@ public class EnemyAI : MonoBehaviour
 
     public void FireProjectile()
     {
-        //thisY = transform.localToWorldMatrix;
         sfxManager.PlayFireWeaponSound();
         switch (gameObject.name)
         {
@@ -153,8 +145,6 @@ public class EnemyAI : MonoBehaviour
                 
                 break;
         }
-        //Rigidbody rb = Instantiate(projectile, new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity).GetComponent<Rigidbody>();
-        //rb.AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
     }
     private void ResetAttack()
     {
