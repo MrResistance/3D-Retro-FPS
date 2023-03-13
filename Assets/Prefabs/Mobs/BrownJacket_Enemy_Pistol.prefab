@@ -95,7 +95,7 @@ MonoBehaviour:
     m_Bits: 1024
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  timeBetweenAttacks: 0.5
+  attackSpeed: 0.5
   projectile: {fileID: 2406943198113280055, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
   projectileSpeed: 1
   sightRange: 10
@@ -105,6 +105,8 @@ MonoBehaviour:
   anim: {fileID: 4655669792507543772}
   mobBillboardAnimation: {fileID: 4655669792507543746}
   objPooler: {fileID: 0}
+  firePosA: {fileID: 0}
+  firePosB: {fileID: 0}
 --- !u!114 &4459813186082950081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  anim: {fileID: 0}
+  health_UI_anim: {fileID: 0}
+  face_UI_anim: {fileID: 0}
 --- !u!82 &8940275637129565220
 AudioSource:
   m_ObjectHideFlags: 0
@@ -335,8 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a8e4c14fbb3014aaba8ea00c5e4009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   targetDirection: {x: 0, y: 0, z: 0}
+  anim: {fileID: 0}
   MirrorLeft: 1
   MainCamera: {fileID: 0}
   directions: 8
