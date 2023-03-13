@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Timeline;
 
 public class DJ : MonoBehaviour
@@ -84,5 +85,4 @@ public class DJ : MonoBehaviour
     {
         StartCoroutine(FadeAudio(newClip, fadeTime));
     }
-
 }
