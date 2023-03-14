@@ -17,8 +17,6 @@ public class EnemyAI : MonoBehaviour
     //Attacking
     public float attackSpeed;
     bool alreadyAttacked;
-    public GameObject projectile;
-    public float projectileSpeed;
 
     //States
     public float sightRange, attackRange;
@@ -143,8 +141,9 @@ public class EnemyAI : MonoBehaviour
                     objPooler.SpawnFromPool("Enemy RPG Projectile", new Vector3(firePosB.position.x, firePosB.position.y, firePosB.position.z - 1), Quaternion.identity);
                 }
                 break;
-            case string s when s.Contains("Beam"):
-                Debug.Log("Fire Beam");
+            case string s when s.Contains("BBEG"):
+                objPooler.SpawnFromPool("Enemy BBEG Projectile", firePosA.transform.position, Quaternion.identity);
+                objPooler.SpawnFromPool("Enemy BBEG Projectile", firePosB.transform.position, Quaternion.identity);
                 break;
         }
     }
