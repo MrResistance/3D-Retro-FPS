@@ -96,8 +96,6 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   attackSpeed: 0.5
-  projectile: {fileID: 2406943198113280055, guid: 068c08e5bedaa404faeca10ce8aa39df, type: 3}
-  projectileSpeed: 1
   sightRange: 10
   attackRange: 5
   playerInSightRange: 0
@@ -132,7 +130,7 @@ AudioSource:
   m_GameObject: {fileID: 4655669791295714490}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5223170878242173726, guid: 1b70a60cf02ec704ea76ac172a83d7b5, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

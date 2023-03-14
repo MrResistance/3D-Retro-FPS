@@ -145,6 +145,10 @@ public class EnemyAI : MonoBehaviour
                 objPooler.SpawnFromPool("Enemy BBEG Projectile", firePosA.transform.position, Quaternion.identity);
                 objPooler.SpawnFromPool("Enemy BBEG Projectile", firePosB.transform.position, Quaternion.identity);
                 break;
+            case string s when s.Contains("HeadCrab"):
+
+                break;
+
         }
     }
     private void ResetAttack()

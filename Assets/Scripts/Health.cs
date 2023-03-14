@@ -9,8 +9,10 @@ public class Health : MonoBehaviour
     public Animator anim, health_UI_anim, face_UI_anim;
     private SFX_Manager sfxManager;
     private GameManager gameManager;
+    private ObjectPooler oP;
     private void Awake()
     {
+        oP = GameObject.FindObjectOfType<ObjectPooler>();
         sfxManager= GetComponent<SFX_Manager>();
         if (this.gameObject.tag.Contains("Player"))
         {
@@ -36,6 +38,10 @@ public class Health : MonoBehaviour
             {
                 anim.SetTrigger("Death");
                 sfxManager.PlayDeathSound();
+                if (gameObject.name.Contains("BBEG"))
+                {
+                    oP.SpawnFromPool("HeadCrab", transform.position, Quaternion.identity);
+                }
                 Invoke(nameof(DestroyEntity), 0.3f);
             }
         }

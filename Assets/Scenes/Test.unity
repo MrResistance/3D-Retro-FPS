@@ -8405,6 +8405,10 @@ MonoBehaviour:
     prefab: {fileID: 1261881725607676486, guid: 35161cc21b232f9449f22d32c48e40f0, type: 3}
     size: 200
     parent: {fileID: 44867495}
+  - tag: HeadCrab
+    prefab: {fileID: 3998689649152307313, guid: 4d8fc80733397bb478ea47b7d6ef732a, type: 3}
+    size: 1
+    parent: {fileID: 1586264054}
 --- !u!4 &348552269
 Transform:
   m_ObjectHideFlags: 0
