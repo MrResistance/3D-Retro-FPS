@@ -14,10 +14,9 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         thisAMGname = amg.name.ToString() + " Volume";
-        Debug.Log(thisAMGname);
         if (!PlayerPrefs.HasKey(thisAMGname))
         {
-            PlayerPrefs.SetFloat(thisAMGname, 1);
+            PlayerPrefs.SetFloat(thisAMGname, Mathf.Log(1) * 20);
             Load();
         }
         else
@@ -38,5 +37,20 @@ public class SoundManager : MonoBehaviour
     private void Load()
     {
         volumeSlider.value = PlayerPrefs.GetFloat(thisAMGname);
+    }
+
+    public void MuteVolume()
+    {
+        if (volumeSlider.value == volumeSlider.minValue)
+        {
+            amg.audioMixer.SetFloat(thisAMGname, Mathf.Log(1) * 20);
+            volumeSlider.value = volumeSlider.maxValue;
+        }
+        else if (volumeSlider.value > volumeSlider.minValue)
+        {
+            amg.audioMixer.SetFloat(thisAMGname, Mathf.Log(0) * 20);
+            volumeSlider.value = volumeSlider.minValue;
+        }
+        Save();
     }
 }

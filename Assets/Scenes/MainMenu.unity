@@ -792,7 +792,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 275196362}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1213291934}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: MuteVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &275196362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3148,7 +3160,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1255792278}
   m_HandleRect: {fileID: 397732907}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.724
@@ -3166,7 +3178,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1213291934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3364,7 +3376,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.724
+  m_FillAmount: 0.7237237
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -3922,7 +3934,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1330204357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4238,7 +4250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: -5.0000153, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1394010204
@@ -5056,7 +5068,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1586533908}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1330204357}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: MuteVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1586533908
 MonoBehaviour:
   m_ObjectHideFlags: 0
