@@ -142,7 +142,9 @@ public class EnemyAI : MonoBehaviour
                     objPooler.SpawnFromPool("Enemy RPG Projectile", new Vector3(firePosA.position.x, firePosA.position.y, firePosA.position.z - 1), Quaternion.identity);
                     objPooler.SpawnFromPool("Enemy RPG Projectile", new Vector3(firePosB.position.x, firePosB.position.y, firePosB.position.z - 1), Quaternion.identity);
                 }
-                
+                break;
+            case string s when s.Contains("Beam"):
+                Debug.Log("Fire Beam");
                 break;
         }
     }
