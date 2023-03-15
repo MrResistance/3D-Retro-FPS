@@ -44,11 +44,14 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.Find("PlayerCapsule").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
-        anim.SetFloat("attackSpeed", attackSpeed);
         mobBillboardAnimation = GetComponentInChildren<MobBillboardAnimation>();
         objPooler = GameObject.FindObjectOfType<ObjectPooler>();
         sfxManager = GetComponent<SFX_Manager>();
         sr = GetComponentInChildren<SpriteRenderer>();
+    }
+    private void OnEnable()
+    {
+        anim.SetFloat("attackSpeed", attackSpeed);
     }
     private void Update()
     {
@@ -128,7 +131,6 @@ public class EnemyAI : MonoBehaviour
                 {
                     objPooler.SpawnFromPool("Enemy Minigun Projectile", firePosB.transform.position, Quaternion.identity);
                 }
-                
                 break;
             case string s when s.Contains("RPG"):
                 if (sr.flipX)

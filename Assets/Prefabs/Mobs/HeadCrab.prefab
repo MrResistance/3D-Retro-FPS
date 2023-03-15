@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shockwave
       objectReference: {fileID: 0}
+    - target: {fileID: 3068630491826358848, guid: 2ec7e25ad9f8e894ebd0e30af20d0c6f, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4019371592799087111, guid: 2ec7e25ad9f8e894ebd0e30af20d0c6f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -149,18 +153,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2046042797684858471, guid: 551fa0e760102ff48a50c2ff6c813200, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5429920958899899789, guid: 551fa0e760102ff48a50c2ff6c813200, type: 3}
       propertyPath: shockwave
       value: 
       objectReference: {fileID: 820038121391184037}
     - target: {fileID: 5429920958899899789, guid: 551fa0e760102ff48a50c2ff6c813200, type: 3}
       propertyPath: attackSpeed
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6412103301090675305, guid: 551fa0e760102ff48a50c2ff6c813200, type: 3}
       propertyPath: m_Name
       value: AoE
       objectReference: {fileID: 0}
+    - target: {fileID: 6412103301090675305, guid: 551fa0e760102ff48a50c2ff6c813200, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556421621151964085, guid: 551fa0e760102ff48a50c2ff6c813200, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 3998689647942059031}
     - target: {fileID: 8838863360515324937, guid: 551fa0e760102ff48a50c2ff6c813200, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -174,5 +190,10 @@ PrefabInstance:
 --- !u!4 &3998689647942059016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 848567158488305847, guid: 551fa0e760102ff48a50c2ff6c813200, type: 3}
+  m_PrefabInstance: {fileID: 4375392556605527231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3998689647942059031 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 848567158488305832, guid: 551fa0e760102ff48a50c2ff6c813200, type: 3}
   m_PrefabInstance: {fileID: 4375392556605527231}
   m_PrefabAsset: {fileID: 0}
