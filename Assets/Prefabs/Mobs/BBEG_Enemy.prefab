@@ -123,6 +123,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BBEG_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4655669792507543747, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655669792507543747, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655669792507543747, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4655669792507543772, guid: 3a536cacbe8ef544a91e3c3f44cd7f5d, type: 3}
       propertyPath: m_Controller
       value: 

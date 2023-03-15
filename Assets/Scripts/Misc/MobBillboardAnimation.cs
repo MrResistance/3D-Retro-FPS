@@ -51,4 +51,8 @@ public class MobBillboardAnimation : MonoBehaviour
     {
         GetComponentInParent<EnemyAI>().FireProjectile();
     }
+    public void Shockwave()
+    {
+        GetComponentInParent<EnemyAI>().Shockwave();
+    }
 }

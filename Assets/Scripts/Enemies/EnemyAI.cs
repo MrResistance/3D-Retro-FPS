@@ -35,7 +35,8 @@ public class EnemyAI : MonoBehaviour
     private Transform firePosA;
     [SerializeField]
     private Transform firePosB;
-
+    [SerializeField]
+    private GameObject shockwave;
     private SpriteRenderer sr;
     private void Awake()
     {
@@ -145,11 +146,12 @@ public class EnemyAI : MonoBehaviour
                 objPooler.SpawnFromPool("Enemy BBEG Projectile", firePosA.transform.position, Quaternion.identity);
                 objPooler.SpawnFromPool("Enemy BBEG Projectile", firePosB.transform.position, Quaternion.identity);
                 break;
-            case string s when s.Contains("HeadCrab"):
-
-                break;
-
         }
+    }
+
+    public void Shockwave()
+    {
+        shockwave.GetComponent<Animator>().Play("Shockwave");
     }
     private void ResetAttack()
     {
