@@ -154,6 +154,7 @@ public class EnemyAI : MonoBehaviour
     public void Shockwave()
     {
         shockwave.GetComponent<Animator>().Play("Shockwave");
+        objPooler.SpawnFromPool("GroundStomp", new Vector3(transform.position.x, 0.3f, transform.position.z), Quaternion.identity);
     }
     private void ResetAttack()
     {
