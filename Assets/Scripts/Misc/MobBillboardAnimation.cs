@@ -14,6 +14,7 @@ public class MobBillboardAnimation : MonoBehaviour
     float maxMirrorAngle = 0;
     public float speed = 1.0f;
     private EnemyAI enemyAI;
+    private ObjectPooler objPooler;
     private void Awake()
     {
         if (MainCamera == null)
@@ -25,6 +26,7 @@ public class MobBillboardAnimation : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        objPooler = GameObject.FindObjectOfType<ObjectPooler>();
         if (directions <= 0)
         {
             directions = 1;
@@ -54,5 +56,10 @@ public class MobBillboardAnimation : MonoBehaviour
     public void Shockwave()
     {
         GetComponentInParent<EnemyAI>().Shockwave();
+    }
+    public void SpawnHeadcrab()
+    {
+        objPooler.SpawnFromPool("HeadCrab", transform.position, Quaternion.identity);
+        gameObject.SetActive(false);
     }
 }

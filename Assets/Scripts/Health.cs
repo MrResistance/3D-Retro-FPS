@@ -38,11 +38,10 @@ public class Health : MonoBehaviour
             {
                 anim.SetTrigger("Death");
                 sfxManager.PlayDeathSound();
-                if (gameObject.name.Contains("BBEG"))
+                if (!gameObject.name.Contains("BBEG"))
                 {
-                    oP.SpawnFromPool("HeadCrab", transform.position, Quaternion.identity);
+                    Invoke(nameof(DestroyEntity), 0.3f);
                 }
-                Invoke(nameof(DestroyEntity), 0.3f);
             }
         }
         if (this.gameObject.tag.Contains("Player"))

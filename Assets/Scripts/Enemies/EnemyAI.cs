@@ -151,6 +151,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+
     public void Shockwave()
     {
         shockwave.GetComponent<Animator>().Play("Shockwave");
