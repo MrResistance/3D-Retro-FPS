@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 373639592092021359, guid: 5094b94b6062ae742a481861ac3b1dd7, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 60b17da3ddf6ccf48b48f046354b36c7, type: 3}
     - target: {fileID: 3900128893409797843, guid: 5094b94b6062ae742a481861ac3b1dd7, type: 3}
       propertyPath: m_Name
       value: Enemy BBEG Projectile
@@ -67,5 +71,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1738195236914223213, guid: 5094b94b6062ae742a481861ac3b1dd7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5094b94b6062ae742a481861ac3b1dd7, type: 3}
