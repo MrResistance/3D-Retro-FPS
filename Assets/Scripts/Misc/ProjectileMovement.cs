@@ -13,10 +13,10 @@ public class ProjectileMovement : MonoBehaviour
     public AudioClip fireSound, contactSound;
     private void OnEnable()
     {
+        aS.PlayOneShot(fireSound);
         if (target != null) tempTarget = target.transform;
         if (gameObject.tag.Contains("Player"))
         {
-            aS.PlayOneShot(fireSound);
             Vector3 direction = Camera.main.transform.forward;
             if (gameObject.name.Contains("Minigun"))
             {
