@@ -27,6 +27,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 4578133545199143284, guid: ebd43d203ffb5024792e9f119794f280, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 49fe487fe600d7748a59d418f4c85342, type: 3}
+    - target: {fileID: 4578133545199143284, guid: ebd43d203ffb5024792e9f119794f280, type: 3}
+      propertyPath: contactSound
+      value: 
+      objectReference: {fileID: 8300000, guid: dce68ee37e93f5b439487ac71731954b, type: 3}
     - target: {fileID: 6874530060678775632, guid: ebd43d203ffb5024792e9f119794f280, type: 3}
       propertyPath: m_RootOrder
       value: 0

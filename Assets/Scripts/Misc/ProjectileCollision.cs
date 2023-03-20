@@ -14,6 +14,11 @@ public class ProjectileCollision : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        //If we have a sound for when the projectile makes contact, play that sound when we hit something
+        if (pm.contactSound != null)
+        {
+            GetComponent<AudioSource>().PlayOneShot(pm.contactSound);
+        }
         //RPG projectile contact is different to the others, it requires an explosion so we:
         //Play the explosion animation, stop the projectile from moving,
         //scale up the explosion effect, calculate AOE (Area of effect) damage
