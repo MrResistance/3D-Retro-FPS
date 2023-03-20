@@ -17,7 +17,6 @@ public class GroundStomp : MonoBehaviour
         {
             other.GetComponent<Health>().TakeDamage(damage);
         }
-        Debug.Log("trigger gs: " + other.name);
     }
     public void DisableObject()
     {
