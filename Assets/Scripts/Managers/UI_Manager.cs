@@ -34,12 +34,27 @@ public class UI_Manager : MonoBehaviour
     public void ShowSettingsMenu()
     {
         settingsCanvas.SetActive(true);
-        HideMainMenu();
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            HideMainMenu();
+        }
+        else
+        {
+            HidePauseMenu();
+        }
     }
     public void HideSettingsMenu()
     {
-        ShowMainMenu();
+        
         settingsCanvas.SetActive(false);
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            ShowMainMenu();
+        }
+        else
+        {
+            ShowPauseMenu();
+        }
     }
     public void ShowPauseMenu()
     {
