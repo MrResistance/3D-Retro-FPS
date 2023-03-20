@@ -13,6 +13,7 @@ public class ProjectileMovement : MonoBehaviour
     public AudioClip fireSound, contactSound;
     private void OnEnable()
     {
+        aS.volume = 1f;
         aS.PlayOneShot(fireSound);
         if (target != null) tempTarget = target.transform;
         if (gameObject.tag.Contains("Player"))

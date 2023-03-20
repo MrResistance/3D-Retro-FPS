@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MobBillboardAnimation : MonoBehaviour
 {
-    public Vector3 targetDirection;
     public Animator anim;
     public bool MirrorLeft = true;
     private SpriteRenderer sr;
@@ -15,12 +14,16 @@ public class MobBillboardAnimation : MonoBehaviour
     public float speed = 1.0f;
     private EnemyAI enemyAI;
     private ObjectPooler objPooler;
+    private AudioSource aS;
+    [SerializeField]
+    private AudioClip footstep;
     private void Awake()
     {
         if (MainCamera == null)
         {
             MainCamera = Camera.main;
         }
+        aS = GetComponentInParent<AudioSource>();
     }
     void Start()
     {
@@ -61,5 +64,10 @@ public class MobBillboardAnimation : MonoBehaviour
     {
         objPooler.SpawnFromPool("HeadCrab", transform.position, Quaternion.identity);
         transform.parent.gameObject.SetActive(false);
+    }
+    public void PlayFootstepSound()
+    {
+        aS.volume = 0.05f;
+        aS.PlayOneShot(footstep);
     }
 }
