@@ -60,6 +60,6 @@ public class MobBillboardAnimation : MonoBehaviour
     public void SpawnHeadcrab()
     {
         objPooler.SpawnFromPool("HeadCrab", transform.position, Quaternion.identity);
-        gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(false);
     }
 }

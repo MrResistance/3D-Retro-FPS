@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GroundStomp : MonoBehaviour
 {
-    public float damage;
-    private MeshCollider meshCollider;
+    [SerializeField]
+    private float damage;
+    private SphereCollider sphereCollider;
     private void Awake()
     {
-        meshCollider = GetComponentInChildren<MeshCollider>();
+        sphereCollider = GetComponent<SphereCollider>();
     }
     private void OnTriggerEnter(Collider other)
     {
