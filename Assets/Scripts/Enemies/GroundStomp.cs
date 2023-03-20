@@ -18,6 +18,10 @@ public class GroundStomp : MonoBehaviour
             other.GetComponent<Health>().TakeDamage(damage);
         }
     }
+    private void OnEnable()
+    {
+        CinemachineShake.Instance.ShakeCamera(10f, 0.2f);
+    }
     public void DisableObject()
     {
         gameObject.SetActive(false);

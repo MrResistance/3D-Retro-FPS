@@ -46,10 +46,12 @@ public class Health : MonoBehaviour
         }
         if (this.gameObject.tag.Contains("Player"))
         {
+            CinemachineShake.Instance.ShakeCamera(5f, 0.2f);
             health_UI_anim.SetFloat("PlayerHealth", health);
             face_UI_anim.SetFloat("PlayerHealth", health);
             if (health <= 0)
             {
+                CinemachineShake.Instance.ShakeCamera(0f, 0f);
                 gameManager.gameOver();
                 sfxManager.PlayDeathSound();
             }
