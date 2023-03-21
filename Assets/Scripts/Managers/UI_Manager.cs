@@ -5,56 +5,41 @@ using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
-    public GameObject gameUI, gameOverUI, continueButton, retryButton, settingsCanvas, mainMenuCanvas;
+    public GameObject gameUI, gameOverUI, continueButton, retryButton, settingsCanvas, mainMenuCanvas, weaponUI;
     void Awake()
     {
-        gameUI = GameObject.Find("Canvases");
+        gameUI = GameObject.Find("GameCanvas");
+        weaponUI = GameObject.Find("WeaponCanvas");
         gameOverUI = GameObject.Find("Game Over Canvas");
-        gameOverUI.SetActive(false);
         settingsCanvas = GameObject.Find("SettingsCanvas");
-        settingsCanvas.SetActive(false);
         mainMenuCanvas = GameObject.Find("MainMenuCanvas");
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             HideGameUI();
+            HideSettingsMenu();
         }
         else
         {
+            ShowGameUI();
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void ShowMainMenu()
     {
-        mainMenuCanvas.SetActive(true);
+        mainMenuCanvas.GetComponent<Canvas>().enabled = true;
     }
     public void HideMainMenu()
     {
-        mainMenuCanvas.SetActive(false);
+        mainMenuCanvas.GetComponent<Canvas>().enabled = false;
     }
     public void ShowSettingsMenu()
     {
-        settingsCanvas.SetActive(true);
-        if (SceneManager.GetActiveScene().name == "MainMenu")
-        {
-            HideMainMenu();
-        }
-        else
-        {
-            HidePauseMenu();
-        }
+        settingsCanvas.GetComponent<Canvas>().enabled = true;
     }
     public void HideSettingsMenu()
     {
-        
-        settingsCanvas.SetActive(false);
-        if (SceneManager.GetActiveScene().name == "MainMenu")
-        {
-            ShowMainMenu();
-        }
-        else
-        {
-            ShowPauseMenu();
-        }
+
+        settingsCanvas.GetComponent<Canvas>().enabled = false;
     }
     public void ShowPauseMenu()
     {
@@ -65,24 +50,27 @@ public class UI_Manager : MonoBehaviour
     public void HidePauseMenu()
     {
         HideGameOverUI();
+        HideSettingsMenu();
     }
     public void ShowGameOverUI()
     { 
-        gameOverUI.SetActive(true);
+        gameOverUI.GetComponent<Canvas>().enabled = true;
         continueButton.SetActive(false);
         retryButton.SetActive(true);
     }
     public void HideGameOverUI()
     {
-        gameOverUI.SetActive(false);
+        gameOverUI.GetComponent<Canvas>().enabled = false;
     }
     public void ShowGameUI()
     {
-        gameUI.SetActive(true);
+        gameUI.GetComponent<Canvas>().enabled = true;
+        weaponUI.GetComponent<Canvas>().enabled = true;
     }
     public void HideGameUI()
     {
-        gameUI.SetActive(false);
+        gameUI.GetComponent<Canvas>().enabled = false;
+        weaponUI.GetComponent<Canvas>().enabled = false;
     }
     public void LoadGameScene()
     {
