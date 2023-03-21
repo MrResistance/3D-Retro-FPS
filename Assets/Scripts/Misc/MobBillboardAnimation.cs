@@ -68,6 +68,6 @@ public class MobBillboardAnimation : MonoBehaviour
     public void PlayFootstepSound()
     {
         aS.volume = 0.05f;
-        aS.PlayOneShot(footstep);
+        if (aS.clip != null) aS.PlayOneShot(footstep);
     }
 }
