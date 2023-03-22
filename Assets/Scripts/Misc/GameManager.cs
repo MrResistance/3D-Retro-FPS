@@ -16,6 +16,14 @@ public class GameManager : MonoBehaviour
         inv = GameObject.FindObjectOfType<Inventory>();
         //Cursor.lockState = CursorLockMode.Confined;
     }
+
+    private void Start()
+    {
+        if (currentState == gameState.game)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
     public void pauseGame()
     {
         Cursor.lockState = CursorLockMode.Confined;

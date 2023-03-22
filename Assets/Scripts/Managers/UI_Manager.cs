@@ -74,7 +74,7 @@ public class UI_Manager : MonoBehaviour
     }
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene("Level1");
         ShowGameUI();
     }
     public void LoadMainMenuScene()
