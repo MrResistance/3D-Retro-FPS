@@ -10,13 +10,125 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5548579e4c37e8e41a18fc96b9fd397b, type: 3}
-  m_Name: Walls
+  m_Name: walls
   m_EditorClassIdentifier: 
   Tiles:
-  - _group: Walls
-    _tileID: -1848264948
+  - _group: walls
+    _tileID: -235215233
     Default: {fileID: 714924918984378425, guid: 2eee94b673553324aa631372d2c90480, type: 3}
     Randoms: []
     Random: 0
-    _name: Wall1
+    _name: wall1
+    Rules: []
+  - _group: walls
+    _tileID: 87191481
+    Default: {fileID: 4819203075040695127, guid: 8ec3b879d218e4f4aa2e1b47ab6dc27f, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall2
+    Rules: []
+  - _group: walls
+    _tileID: -329868975
+    Default: {fileID: 7096842911987727874, guid: c1069a915ac6c7742affb650d3e642ef, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall3
+    Rules: []
+  - _group: walls
+    _tileID: -984157272
+    Default: {fileID: 4265063159823536224, guid: 2de1cd21c996ee9499d1244e6ba5494a, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall4
+    Rules: []
+  - _group: walls
+    _tileID: 1214589840
+    Default: {fileID: 994058884093606699, guid: 06ce7d4e22f0dd446b541c676259b418, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall5
+    Rules: []
+  - _group: walls
+    _tileID: -438729025
+    Default: {fileID: 3030377387985735055, guid: 091e0428d69477243bae542c1f5d16bd, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall6
+    Rules: []
+  - _group: walls
+    _tileID: -312176527
+    Default: {fileID: 7806726176352738040, guid: 151a4d14dff8bc14ab685eb4c7cdf4f8, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall7
+    Rules: []
+  - _group: walls
+    _tileID: -1684202276
+    Default: {fileID: 3782771985457840164, guid: 36680f55c99a74641bb95a35e534ab82, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall8
+    Rules: []
+  - _group: walls
+    _tileID: 1819611883
+    Default: {fileID: 5200046337505080880, guid: f8931052dfab7304fa386d10a0279969, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall9
+    Rules: []
+  - _group: walls
+    _tileID: 857648738
+    Default: {fileID: 5025536749892737653, guid: ee6d3ee53c4f0b1449e47fa60e868605, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall10
+    Rules: []
+  - _group: walls
+    _tileID: 24488044
+    Default: {fileID: 7204049163162395507, guid: 8e3794e4669401246a7d19b6812a41e8, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall11
+    Rules: []
+  - _group: walls
+    _tileID: 1174487524
+    Default: {fileID: 6854391749245150330, guid: 39d2628348a2f4f4d83e7aced716fff2, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall12
+    Rules: []
+  - _group: walls
+    _tileID: 479572757
+    Default: {fileID: 972539582573284678, guid: f75324ab7eab55942b4cfbe7ab0d96ec, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall13
+    Rules: []
+  - _group: walls
+    _tileID: 1138962292
+    Default: {fileID: 2968366643477838747, guid: 557827f5cae835c4cb089cd298908c38, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall14
+    Rules: []
+  - _group: walls
+    _tileID: 5263937
+    Default: {fileID: 4896273738341969539, guid: 690d611afc8c5714990396acd1cc4116, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall15
+    Rules: []
+  - _group: walls
+    _tileID: -1112307296
+    Default: {fileID: 8591235087889398656, guid: 0b0d16e3877a23f4b91287a4f956d43e, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall16
+    Rules: []
+  - _group: walls
+    _tileID: -1722449323
+    Default: {fileID: 2684121470672767507, guid: 0f901926a2778d04d8a99477d8de67c4, type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall17
     Rules: []

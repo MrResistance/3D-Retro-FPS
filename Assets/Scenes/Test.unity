@@ -2487,7 +2487,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 44800c69be737e542bc9aeb7efdae05d, type: 2}
   - {fileID: 11400000, guid: 086471ca33d4b294b87b2cecdd98e4fd, type: 2}
   - {fileID: 11400000, guid: 87b8d609771fb4943b46588342cee428, type: 2}
-  - {fileID: 11400000, guid: 8afebd50105b6654bbe167fe05847d68, type: 2}
+  - {fileID: 0}
   HoverPrefabObject: {fileID: 2544636109442507173, guid: 25564a32ffd2f804e99d7f1501598aec, type: 3}
   LocalHoverPosition: {x: -49, y: 0, z: -6}
   PrevLocalHoverPosition: {x: -49, y: 0, z: -6}
@@ -18527,7 +18527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerName: Walls
-  Group: {fileID: 11400000, guid: 8afebd50105b6654bbe167fe05847d68, type: 2}
+  Group: {fileID: 0}
   _NodesKeys:
   - {x: -3, y: 1, z: -2}
   - {x: -3, y: 1, z: -1}
@@ -19698,7 +19698,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 11400000, guid: 086471ca33d4b294b87b2cecdd98e4fd, type: 2}
   - {fileID: 11400000, guid: 87b8d609771fb4943b46588342cee428, type: 2}
-  - {fileID: 11400000, guid: 8afebd50105b6654bbe167fe05847d68, type: 2}
+  - {fileID: 0}
   HoverPrefabObject: {fileID: 714924918984378425, guid: 2eee94b673553324aa631372d2c90480, type: 3}
   LocalHoverPosition: {x: 22, y: 1, z: 8}
   PrevLocalHoverPosition: {x: 22, y: 1, z: 8}
