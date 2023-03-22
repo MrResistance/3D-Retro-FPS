@@ -10,13 +10,125 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5548579e4c37e8e41a18fc96b9fd397b, type: 3}
-  m_Name: Floors
+  m_Name: floors
   m_EditorClassIdentifier: 
   Tiles:
-  - _group: Floors
-    _tileID: -1831713352
+  - _group: floors
+    _tileID: -839511385
     Default: {fileID: 3613276369897487554, guid: 7c697b25ee83c4b4b921b48ad016a509, type: 3}
     Randoms: []
     Random: 0
-    _name: Floor1
+    _name: floor1
+    Rules: []
+  - _group: floors
+    _tileID: -914658456
+    Default: {fileID: 4331345318398518836, guid: 59cfcfc452d4ba646b50a617aa62c891, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor2
+    Rules: []
+  - _group: floors
+    _tileID: -361399709
+    Default: {fileID: 6076975259909702814, guid: 235f211127f902a4c8cab64c26c27af9, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor3
+    Rules: []
+  - _group: floors
+    _tileID: 416876085
+    Default: {fileID: 4585171938304103606, guid: 4d8f3008800fc634db9c1b2e27fb1d2d, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor4
+    Rules: []
+  - _group: floors
+    _tileID: -978694686
+    Default: {fileID: 2582656746106851664, guid: bcc11cd3a082df64eb4933dd11099924, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor5
+    Rules: []
+  - _group: floors
+    _tileID: -650628325
+    Default: {fileID: 2544636109442507173, guid: 25564a32ffd2f804e99d7f1501598aec, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor6
+    Rules: []
+  - _group: floors
+    _tileID: 703622200
+    Default: {fileID: 9004802002351165971, guid: 32e612f47abe9504ba9330ae2ee6bd2c, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor7
+    Rules: []
+  - _group: floors
+    _tileID: 1249665248
+    Default: {fileID: 7550364909005909118, guid: 787c160044c7e2f47b16a569beab12af, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor8
+    Rules: []
+  - _group: floors
+    _tileID: -576498805
+    Default: {fileID: 5795807560411385274, guid: 29c8647399bfd7840b1dd380a87676a7, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor9
+    Rules: []
+  - _group: floors
+    _tileID: 469785740
+    Default: {fileID: 6597524688537652284, guid: fc4d67bbc9e8d554fa7ed680ff740c41, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor10
+    Rules: []
+  - _group: floors
+    _tileID: -1605993762
+    Default: {fileID: 5447951551879410571, guid: 93c6cae29a6a1dd40b301097c8feca7f, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor11
+    Rules: []
+  - _group: floors
+    _tileID: 1850394041
+    Default: {fileID: 8610940968033404857, guid: 8603591eeec8cff4b9d85fbab899939b, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor12
+    Rules: []
+  - _group: floors
+    _tileID: -526141035
+    Default: {fileID: 5024192229373377661, guid: 3a29e1f43a0649b4cb59f6ea20dfc792, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor13
+    Rules: []
+  - _group: floors
+    _tileID: 2146846760
+    Default: {fileID: 3238551674621734739, guid: ba96a8d45563d274c95ccb2d2abcaf33, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor14
+    Rules: []
+  - _group: floors
+    _tileID: 1443461368
+    Default: {fileID: 708842836555282299, guid: d20433ad594efed4aa4adaf8d6d50da9, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor15
+    Rules: []
+  - _group: floors
+    _tileID: 1304377219
+    Default: {fileID: 7780084385710282198, guid: 18c539a29d8cd3c4db40dc3406c7d57f, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor16
+    Rules: []
+  - _group: floors
+    _tileID: 1961611676
+    Default: {fileID: 1887277877042007258, guid: 452d2859b5b0eca4e86a7a33875788f1, type: 3}
+    Randoms: []
+    Random: 0
+    _name: floor17
     Rules: []
