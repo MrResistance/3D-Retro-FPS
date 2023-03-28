@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: fireSound
       value: 
       objectReference: {fileID: 8300000, guid: 60b17da3ddf6ccf48b48f046354b36c7, type: 3}
+    - target: {fileID: 2717412536866509591, guid: 5094b94b6062ae742a481861ac3b1dd7, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5223170878242173726, guid: 1b70a60cf02ec704ea76ac172a83d7b5, type: 2}
     - target: {fileID: 3900128893409797843, guid: 5094b94b6062ae742a481861ac3b1dd7, type: 3}
       propertyPath: m_Name
       value: Enemy BBEG Projectile

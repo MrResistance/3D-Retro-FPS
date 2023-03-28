@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 2502009444863566710, guid: ebd43d203ffb5024792e9f119794f280, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5223170878242173726, guid: 1b70a60cf02ec704ea76ac172a83d7b5, type: 2}
     - target: {fileID: 3278061950564855076, guid: ebd43d203ffb5024792e9f119794f280, type: 3}
       propertyPath: m_Layer
       value: 6

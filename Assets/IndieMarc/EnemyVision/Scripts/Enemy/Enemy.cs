@@ -86,8 +86,11 @@ namespace IndieMarc.EnemyVision
 
         private static List<Enemy> enemy_list = new List<Enemy>();
 
+        private Animator anim;
+
         private void Awake()
         {
+            anim = GetComponentInChildren<Animator>();
             enemy_list.Add(this);
             rigid = GetComponent<Rigidbody>();
             nav_agent = GetComponent<NavMeshAgent>();
@@ -209,6 +212,7 @@ namespace IndieMarc.EnemyVision
                     transform.rotation = reachedRotation;
                 }
             }
+            anim.SetFloat("Speed", nav_agent.velocity.magnitude);
         }
 
         private void UpdateAlert()

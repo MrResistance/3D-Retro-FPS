@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using IndieMarc.EnemyVision;
+using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -38,6 +40,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     private GameObject shockwave;
     private SpriteRenderer sr;
+    private EnemyVision enemy;
     private void Awake()
     {
         health = GetComponent<Health>();
@@ -53,52 +56,49 @@ public class EnemyAI : MonoBehaviour
     {
         anim.SetFloat("attackSpeed", attackSpeed);
     }
-    private void Update()
-    {
-        //Check for sight and attack range
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
-        anim.SetFloat("Speed", agent.velocity.magnitude);
+    private void Start()
+    {
+        enemy = GetComponent<EnemyVision>();
+        enemy.onDeath += OnDeath;
+        enemy.onAlert += OnAlert;
+        enemy.onSeeTarget += OnSeen;
+        enemy.onDetectTarget += OnDetect;
+        enemy.onTouchTarget += OnTouch;
+    }
+    //Can be either because seen or heard noise
+    private void OnAlert(Vector3 target)
+    {
     }
 
-    private void Patroling()
+    private void OnSeen(VisionTarget target, int distance)
     {
-        if (!walkPointSet) SearchWalkPoint();
-
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
-
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-
-        //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
-            walkPointSet = false;
-    }
-    private void SearchWalkPoint()
-    {
-        //Calculate random point in range
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
-
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-            walkPointSet = true;
+        //Add code for when target get seen and enemy get alerted, 0=touch, 1=near, 2=far, 3=other
     }
 
-    private void ChasePlayer()
+    private void OnDetect(VisionTarget target, int distance)
     {
-        agent.SetDestination(player.position);
+        //Add code for when the enemy detect you as a threat (and start chasing), 0=touch, 1=near, 2=far, 3=other
+        if (distance < 3)
+        {
+            AttackPlayer();
+        }
     }
 
+    private void OnTouch(VisionTarget target)
+    {
+        //Add code for when you get caughts
+        AttackPlayer();
+    }
+
+    private void OnDeath()
+    {
+        gameObject.SetActive(false);
+    }
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
-        agent.SetDestination(transform.position);
+        //agent.SetDestination(transform.position);
         if (!alreadyAttacked)
         {
             anim.SetTrigger("Shoot");
