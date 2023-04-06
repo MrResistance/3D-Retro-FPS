@@ -42,7 +42,7 @@ namespace IndieMarc.EnemyVision
 
         private Enemy enemy;
 
-        private VisionTarget seen_character = null;
+        public VisionTarget seen_character = null;
         private VisionCone vision;
 
         private float detect_timer = 0f;

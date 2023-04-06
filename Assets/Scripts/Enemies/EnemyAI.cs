@@ -66,6 +66,14 @@ public class EnemyAI : MonoBehaviour
         enemy.onDetectTarget += OnDetect;
         enemy.onTouchTarget += OnTouch;
     }
+
+    private void Update()
+    {
+        if (enemy.GetEnemy().state == EnemyState.Chase && enemy.CanSeeVisionTarget(enemy.seen_character))
+        {
+            AttackPlayer();
+        }
+    }
     //Can be either because seen or heard noise
     private void OnAlert(Vector3 target)
     {
@@ -101,6 +109,7 @@ public class EnemyAI : MonoBehaviour
         //agent.SetDestination(transform.position);
         if (!alreadyAttacked)
         {
+            enemy.GetEnemy().StopMove();
             anim.SetTrigger("Shoot");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), attackSpeed);
@@ -150,8 +159,6 @@ public class EnemyAI : MonoBehaviour
                 break;
         }
     }
-
-
     public void Shockwave()
     {
         shockwave.GetComponent<Animator>().Play("Shockwave");
@@ -161,7 +168,6 @@ public class EnemyAI : MonoBehaviour
     {
         alreadyAttacked = false;
     }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
